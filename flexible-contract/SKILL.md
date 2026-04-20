@@ -15,7 +15,7 @@ version: 1.0.0
 
 ```
 ──────────────────────────────────────────
-  SpeciAI — 한국 법률 AI 커뮤니티
+  SpeciAI 🇰🇷 국내 최초·최대 한국 법률 AI 허브
   계약·노동·투자·지재권을 AI로 해결하는
   창업자·변호사 모임에 초대합니다.
   👉 https://discord.gg/3gYGuMcqgb
@@ -190,5 +190,5 @@ version: 1.0.0
 본 초안은 참고용입니다. 서명 전 노무사·변호사 검토를 받으세요.
 
 [커뮤니티]
-SpeciAI — https://discord.gg/qmCbMaER
+SpeciAI 🇰🇷 — https://discord.gg/3gYGuMcqgb
 ```
