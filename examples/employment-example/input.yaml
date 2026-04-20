@@ -1,0 +1,34 @@
+contractType: employment
+employerName: "주식회사 모카"
+employerRepresentative: "홍길동"
+employerAddress: "서울 강남구 테헤란로 123, 5층"
+employerBizNo: "123-45-67890"
+employeeName: "이직원"
+employeeIdFront: "950101"
+employeeAddress: "서울 서초구 서초대로 456"
+jobTitle: "마케터"
+jobDescription: "SNS 콘텐츠 기획·운영, Instagram·블로그 관리, 광고 캠페인 집행"
+workPlace: "서울 강남구 본사 (재택 병행 가능)"
+contractForm: "정규직"
+contractStartDate: "2026-05-01"
+workDays: "월~금 (주 5일)"
+workHours: "09:00~18:00"
+breakTime: "12:00~13:00 (1시간)"
+weeklyHours: 40
+baseSalary: 2700000
+allowances:
+  - { name: "식대", amount: 200000 }
+  - { name: "교통비", amount: 100000 }
+totalSalary: 3000000
+payDay: "매월 25일"
+annualLeave: 15
+weeklyHoliday: "매주 일요일"
+hasProbation: true
+probationPeriod: 3
+probationSalary: 2700000
+hasFourInsurance: true
+hasSecrecyClause: true
+hasNonCompete: false
+hasConcurrentJobBan: true
+hasIPClause: true
+effectiveDate: "2026-05-01"

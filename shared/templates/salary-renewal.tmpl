@@ -1,0 +1,113 @@
+> 본 계약서 초안은 참고용이며 법률 자문이 아닙니다.
+> 실제 서명 전 노무사 또는 변호사 검토를 권장합니다.
+> 작성 기준: 근로기준법 §17·§43, 2026년 최저임금 10,320원/시
+
+# 연봉계약서
+
+{{employerName}}(이하 "사용자")과(와) {{employeeName}}(이하 "근로자")는 다음과 같이 연봉을 정하여 근로계약을 체결한다.
+
+---
+
+## 제1조 (적용 기간)
+
+본 연봉계약의 적용 기간은 {{salaryStartDate}}부터 {{salaryEndDate}}까지로 한다.
+
+## 제2조 (직책 및 업무)
+
+1. 직책: {{jobTitle}}
+2. 업무 내용: {{jobDescription}}
+3. 근무 장소: {{workPlace}}
+
+## 제3조 (연봉 및 임금 구성)
+
+### 연봉 총액
+
+| 구분 | 월 지급액 | 연간 금액 |
+|------|----------|----------|
+| 기본급 | {{monthlyBaseSalary}}원 | {{annualBaseSalary}}원 |
+{{#each allowances}}
+| {{this.name}} | {{this.monthlyAmount}}원 | {{this.annualAmount}}원 |
+{{/each}}
+{{#if hasFixedOT}}
+| 고정연장수당 ({{fixedOTHours}}h/월) | {{fixedOTMonthly}}원 | {{fixedOTAnnual}}원 |
+{{/if}}
+| **합계** | **{{totalMonthlyPay}}원** | **{{totalAnnualSalary}}원** |
+
+{{#if hasBonusScheme}}
+### 성과급·상여금
+
+{{bonusDescription}}
+{{/if}}
+
+### 임금 지급 방법
+
+- 지급일: 매월 {{payDay}}
+- 지급 방법: 근로자 지정 계좌 입금
+
+{{#if hasFixedOT}}
+## 제4조 (고정연장수당 — 포괄임금)
+
+1. 고정OT 시간: 월 {{fixedOTHours}}시간분의 연장근로수당을 포괄임금에 포함한다.
+2. 실제 연장근로시간이 월 {{fixedOTHours}}시간을 초과하는 경우 초과분에 대한 연장수당을 별도 지급한다.
+3. 기본급 시급 환산액이 최저임금을 하회하는 경우 본 포괄임금 조항은 무효로 한다.
+
+※ 포괄임금제 적법 요건: 연장근로가 상시·규칙적으로 발생하는 업무에만 유효하다.
+
+{{/if}}
+
+## 제{{#if hasFixedOT}}5{{else}}4{{/if}}조 (근무 시간)
+
+1. 주 소정근로시간: {{weeklyHours}}시간
+2. 근무 시간: {{workHours}}
+3. 휴게 시간: {{breakTime}}
+
+## 제{{#if hasFixedOT}}6{{else}}5{{/if}}조 (휴일·휴가)
+
+1. 주휴일: {{weeklyHoliday}} (유급)
+{{#if isFiveOrMore}}
+2. 법정 공휴일: 유급 휴일로 부여
+3. 연차유급휴가: {{annualLeave}}일 (근로기준법 §60)
+{{/if}}
+
+## 제{{#if hasFixedOT}}7{{else}}6{{/if}}조 (4대보험)
+
+국민연금, 건강보험, 고용보험, 산재보험에 가입한다.
+
+{{#if isFiveOrMore}}
+## 제{{#if hasFixedOT}}8{{else}}7{{/if}}조 (가산수당)
+
+소정근로시간 외 연장·야간·휴일 근로 시 근로기준법 §56에 따른 가산수당(통상임금의 50% 이상)을 지급한다.
+(고정OT 초과분에 한하여 적용)
+{{/if}}
+
+## 부칙 (준거)
+
+본 계약에 명시되지 않은 사항은 근로기준법, 취업규칙 및 관계 법령에 따른다.
+
+## 부칙 (계약의 효력)
+
+1. 양 당사자는 본 연봉계약서를 작성하고 서명 또는 기명날인하여 각 1통씩 보관한다.
+2. 전자서명을 통해 본 계약을 체결할 경우 전자적 방법의 효력을 인정한다.
+
+---
+
+계약 체결일: {{effectiveDate}}
+
+**사용자**
+
+| 항목 | 내용 |
+|------|------|
+| 법인명/상호 | {{employerName}} |
+| 대표자 | {{employerRepresentative}} (서명 또는 인) |
+| 사업자번호 | {{employerBizNo}} |
+| 주소 | {{employerAddress}} |
+
+**근로자**
+
+| 항목 | 내용 |
+|------|------|
+| 성명 | {{employeeName}} (서명 또는 인) |
+| 주민등록번호 | {{employeeIdFront}}-●●●●●●● |
+| 직책 | {{jobTitle}} |
+| 주소 | {{employeeAddress}} |
+| 연락처 | {{employeeContact}} |

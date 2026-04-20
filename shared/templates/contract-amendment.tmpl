@@ -1,0 +1,100 @@
+> 본 계약서 초안은 참고용이며 법률 자문이 아닙니다.
+> 실제 서명 전 노무사 또는 변호사 검토를 권장합니다.
+> 작성 기준: 근로기준법 §4·§17, 2026년 최저임금 10,320원/시
+
+# 근로조건 변경 합의서
+
+{{employerName}}(이하 "사용자")과(와) {{employeeName}}(이하 "근로자")는 {{originalContractDate}}에 체결한 근로계약서의 일부 조건을 아래와 같이 변경하기로 합의한다.
+
+---
+
+## 제1조 (변경 시행일)
+
+변경된 근로조건은 {{effectiveDate}}부터 적용한다.
+
+## 제2조 (변경 내용)
+
+{{#if hasSalaryChange}}
+### 임금 변경
+
+| 항목 | 변경 전 | 변경 후 |
+|------|---------|---------|
+| 기본급 | {{prevBaseSalary}}원/월 | {{newBaseSalary}}원/월 |
+{{#each salaryChangeItems}}
+| {{this.name}} | {{this.prevAmount}}원 | {{this.newAmount}}원 |
+{{/each}}
+| 총 월 급여 | {{prevTotalSalary}}원 | {{newTotalSalary}}원 |
+
+{{#if isSalaryDecrease}}
+⚠️ 주의: 임금이 감소하는 불이익 변경입니다. 근로자의 자유로운 의사에 의한 서면 동의가 반드시 필요합니다.
+{{/if}}
+
+{{/if}}
+
+{{#if hasWorkplaceChange}}
+### 근무 장소 변경
+
+| 항목 | 변경 전 | 변경 후 |
+|------|---------|---------|
+| 근무 장소 | {{prevWorkPlace}} | {{newWorkPlace}} |
+
+{{/if}}
+
+{{#if hasJobChange}}
+### 업무 내용·직책 변경
+
+| 항목 | 변경 전 | 변경 후 |
+|------|---------|---------|
+| 직책 | {{prevJobTitle}} | {{newJobTitle}} |
+| 업무 내용 | {{prevJobDescription}} | {{newJobDescription}} |
+
+{{/if}}
+
+{{#if hasWorkHoursChange}}
+### 근무 시간 변경
+
+| 항목 | 변경 전 | 변경 후 |
+|------|---------|---------|
+| 근무 시간 | {{prevWorkHours}} | {{newWorkHours}} |
+| 주 소정근로시간 | {{prevWeeklyHours}}시간 | {{newWeeklyHours}}시간 |
+
+{{#if isWorkHoursIncrease}}
+⚠️ 주의: 소정근로시간이 늘어나는 경우 실질 임금(시급) 감소 효과가 발생할 수 있습니다. 최저임금 기준으로 검토하세요.
+{{/if}}
+
+{{/if}}
+
+## 제3조 (기존 계약 유지)
+
+본 합의서에서 변경하지 않은 나머지 근로조건은 {{originalContractDate}} 체결 근로계약서에 따른다.
+
+## 제4조 (준거)
+
+본 합의서에 명시되지 않은 사항은 근로기준법 및 관계 법령에 따른다.
+
+## 제5조 (합의서의 효력)
+
+1. 양 당사자는 본 합의서를 작성하고 서명 또는 기명날인하여 각 1통씩 보관한다.
+2. 본 합의서는 {{effectiveDate}}부터 효력이 발생한다.
+
+---
+
+합의 체결일: {{agreementDate}}
+
+**사용자**
+
+| 항목 | 내용 |
+|------|------|
+| 법인명/상호 | {{employerName}} |
+| 대표자 | {{employerRepresentative}} (서명 또는 인) |
+| 사업자번호 | {{employerBizNo}} |
+| 주소 | {{employerAddress}} |
+
+**근로자**
+
+| 항목 | 내용 |
+|------|------|
+| 성명 | {{employeeName}} (서명 또는 인) |
+| 주민등록번호 | {{employeeIdFront}}-●●●●●●● |
+| 주소 | {{employeeAddress}} |
+| 연락처 | {{employeeContact}} |
