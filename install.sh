@@ -20,6 +20,7 @@ fi
 
 # 기존 심링크 제거 후 재생성
 SKILLS=(
+  "korean-contracts"
   "employment-contract"
   "parttime-contract"
   "flexible-contract"
@@ -49,6 +50,7 @@ done
 echo ""
 echo "설치 완료! Claude Code에서 다음 명령어를 사용할 수 있습니다:"
 echo ""
+echo "  /korean-contracts         계약서 유형 안내 (진입점)"
 echo "  /employment-contract      근로계약서 (주40시간)"
 echo "  /parttime-contract        알바계약서 (단시간)"
 echo "  /flexible-contract        유연근무 계약서"
