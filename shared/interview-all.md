@@ -30,7 +30,7 @@
 - Read 툴 또는 붙여넣기로 내용 수신
 - 계약 유형, 당사자 정보, 근무 조건, 임금 항목 자동 추출
 - 누락·오류 항목만 추가 질문
-- legal-validation-rules.md RULE 1~11 즉시 적용해 문제점 먼저 안내
+- legal-validation-rules.md RULE 1~14 즉시 적용해 문제점 먼저 안내
 
 ---
 

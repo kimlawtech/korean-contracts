@@ -219,8 +219,8 @@ Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/fl
 - `{{#if isFiveOrMore}}` 블록 제거 — 가산수당, 공휴일 유급, 연차 의무, 부당해고 조항
 
 **유연근무 유형 분기:**
-- `{{#if isTallyuk}}` 블록 활성화 — 탄력근로 단위 기간·최대 근로시간·사전 통보 조항
-- `{{#if isSelect}}` 블록 활성화 — 선택근로 코어타임·플렉스타임·정산 기간 조항
+- `{{#if isTallyWork}}` 블록 활성화 — 탄력근로 단위 기간·최대 근로시간·사전 통보 조항
+- `{{#if isSelectWork}}` 블록 활성화 — 선택근로 코어타임·플렉스타임·정산 기간 조항
 - `{{#if isRemote}}` 블록 활성화 — 재택근무 취업장소·업무보고·장비·통신비 조항
 
 ## [6단계] 품질 검증 체크리스트

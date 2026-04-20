@@ -228,11 +228,19 @@ version: 2.0.0
 
 Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/contract-amendment.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
 
-**불이익 변경 분기:**
-- `{{#if isDisadvantageChange}}` 블록 활성화 — 자유의사 동의 문구, 설명 고지 확인란
-
 **임금 변경 분기:**
-- `{{#if isWageChange}}` 블록 활성화 — 변경 전·후 기본급, 시급 환산, 최저임금 검증 결과 명시
+- `{{#if hasSalaryChange}}` 블록 활성화 — 변경 전·후 기본급 명시
+- `{{#if isSalaryDecrease}}` 블록 활성화 — 임금 삭감 시 자유의사 동의 문구, 최저임금 검증 결과 명시
+
+**근무장소 변경 분기:**
+- `{{#if hasWorkplaceChange}}` 블록 활성화 — 변경 전·후 근무장소 및 원거리 경고 문구
+
+**업무내용·직책 변경 분기:**
+- `{{#if hasJobChange}}` 블록 활성화 — 변경 전·후 직책·업무내용 명시
+
+**근무시간 변경 분기:**
+- `{{#if hasWorkHoursChange}}` 블록 활성화 — 변경 전·후 근무시간
+- `{{#if isWorkHoursIncrease}}` 블록 활성화 — 근무시간 증가 시 실질 시급 감소 경고
 
 ## [6단계] 품질 검증 체크리스트
 
