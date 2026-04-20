@@ -2,7 +2,8 @@
 
 [![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-orange)](https://claude.ai/code)
-[![Version](https://img.shields.io/badge/version-2.0.0-green)](https://github.com/kimlawtech/korean-contracts)
+[![Version](https://img.shields.io/badge/version-2.1.0-green)](https://github.com/kimlawtech/korean-contracts)
+[![MCP](https://img.shields.io/badge/MCP-Enabled-purple)](https://modelcontextprotocol.io)
 [![Discord](https://img.shields.io/badge/Discord-SpeciAI-5865F2)](https://discord.gg/3gYGuMcqgb)
 
 **한국 사업자를 위한 AI 계약서 자동 작성 도구**
@@ -88,6 +89,81 @@
 - **배우자 출산휴가 20일** (남녀고용평등법 §18의2, 2025년 시행)
 - **하도급법 2024.8.28.** — 기술자료 유용 5배 손해배상
 - **임금명세서 교부 의무** (근로기준법 §48②, 과태료 100만원)
+
+---
+
+## 🔒 MCP 보안 서버 (v2.1 신규)
+
+**가장 중요한 기능입니다.** 계약서에 들어가는 근로자 이름·주민번호·주소·급여는 민감 개인정보이므로 Claude·Anthropic 서버에 평문으로 노출되지 않아야 합니다.
+
+본 패키지는 [Model Context Protocol (MCP)](https://modelcontextprotocol.io) 로컬 서버를 내장해 개인정보를 **토큰으로 마스킹**한 뒤 Claude에 전달하고, 최종 파일 저장 시에만 사용자 맥에서 복원합니다.
+
+### 처리 흐름
+
+```
+[사용자 입력]
+"홍길동 대표, 이직원 직원, 월 300만원"
+         ↓
+[MCP 마스킹 — 사용자 맥 로컬]
+"PERSON_B, PERSON_A, AMOUNT_3M"
+         ↓
+[Claude가 보는 것 — 토큰만]
+계약서 조항을 토큰 상태로 생성
+         ↓
+[MCP 저장 — 사용자 맥 로컬에서 복원]
+실제 값 치환 → .txt + .docx 저장
+```
+
+### 무엇이 보호되는가
+
+| 항목 | 마스킹 토큰 | 복원 위치 |
+|------|-------------|-----------|
+| 근로자·고용주 이름 | `PERSON_A`, `PERSON_B` | 로컬 세션 메모리 |
+| 주민번호 앞 6자리 | `ID_FRONT` | 로컬 세션 메모리 |
+| 주소 | `ADDRESS_A`, `ADDRESS_B` | 로컬 세션 메모리 |
+| 급여·계약금액 | `AMOUNT_3M`, `AMOUNT_500K` | 로컬 세션 메모리 |
+| 전화번호·사업자번호 | `CONTACT_A`, `BIZ_NO` | 로컬 세션 메모리 |
+
+**세션 수명:** 계약서 저장 직후 자동 삭제. 프로세스 종료 시에도 삭제.
+
+### 제공되는 MCP 도구 5종
+
+| 도구 | 용도 |
+|------|------|
+| `mask_personal_info` | 변수 맵을 받아 개인정보를 토큰화, 세션에 원본 저장 |
+| `save_contract` | 마스킹된 계약서 텍스트를 복원해 `.txt` + `.docx` 저장 |
+| `load_contract_for_review` | 기존 계약서 파일 읽기 + 자동 마스킹 |
+| `save_reviewed_contract` | 검토 후 수정된 계약서 복원 저장 |
+| `list_sessions` | 활성 세션 목록 조회 (디버깅용) |
+
+### MCP 서버 설치
+
+```bash
+# 1. Python 의존성 설치
+pip install mcp python-docx
+
+# 2. Claude Desktop 설정 파일에 서버 등록
+# ~/Library/Application Support/Claude/claude_desktop_config.json
+```
+
+설정 파일 내용:
+
+```json
+{
+  "mcpServers": {
+    "korean-contracts": {
+      "command": "python3",
+      "args": ["/Users/<사용자>/Desktop/skill/korean-contracts/mcp-server/server.py"]
+    }
+  }
+}
+```
+
+Claude Desktop을 재시작하면 MCP 서버가 자동 연결됩니다.
+
+### MCP 서버 없이도 동작
+
+MCP가 연결되지 않은 환경에서는 **플레이스홀더 모드**로 자동 전환됩니다. 민감 필드가 `[근로자 이름]`, `[기본급]` 형태의 대괄호로 표시되며, 사용자가 최종 파일에서 직접 기입하면 됩니다.
 
 ---
 
@@ -201,6 +277,12 @@ korean-contracts/
 ├── assets/
 │   └── sample-employment-contract.png
 │
+├── mcp-server/                 ← 🔒 개인정보 보호 MCP 서버
+│   └── server.py                 마스킹·복원·저장 5개 도구
+│
+├── examples/
+│   └── TEST-CASES.md             16개 테스트 시나리오
+│
 └── shared/                     ← 8개 스킬 공용 리소스
     ├── interview-all.md          유형별 인터뷰 질문 전체
     ├── render.md                 템플릿 치환 프로토콜
@@ -224,6 +306,28 @@ korean-contracts/
         ├── salary-renewal.tmpl
         └── daily-worker-contract.tmpl
 ```
+
+---
+
+## 왜 이 스킬을 만들었나
+
+사업자·프리랜서·인사담당자가 계약서 한 장 쓰려면 법무 비용이 많이 들거나, 인터넷 템플릿을 구해도 **2026년 개정법령·대법원 최신 판례가 반영되지 않은 경우가 대부분**입니다.
+
+이 스킬은 Claude Desktop에 한 번 설치하면:
+
+- **9가지 계약 유형**을 대화만으로 작성
+- **2026년 최저임금·통상임금·포괄임금 판례** 자동 반영
+- **RULE 1~14 법률 검증** 자동 통과
+- **개인정보 마스킹 MCP 서버**로 프라이버시 보호
+- `.txt` + `.docx` 두 파일 자동 저장
+
+5분 내외로 노무사 검토용 초안을 뽑을 수 있도록 만들었습니다.
+
+**누가 쓰면 좋은가:**
+- 직원을 처음 채용하는 스타트업 창업자
+- 알바·프리랜서 계약이 잦은 소상공인
+- 계약서 검토 업무가 반복되는 인사담당자
+- 기존 계약서를 개정법령 기준으로 재검토해야 하는 노무사·변호사
 
 ---
 

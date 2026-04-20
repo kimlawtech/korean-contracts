@@ -3,3 +3,6 @@ __pycache__/
 *.pyo
 .DS_Store
 *.docx
+
+# 로컬 전용 (외부 비공개)
+THREAD.md
