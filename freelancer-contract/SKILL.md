@@ -4,7 +4,7 @@ description: 개인 프리랜서·1인 사업자와의 용역 계약서 자동 �
 license: Apache-2.0
 version: 1.0.0
 ---
-<!-- {SKILL_DIR} = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {SKILL_DIR}을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- /Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 
 # Freelancer Contract Skill — 프리랜서 계약서
@@ -49,27 +49,27 @@ version: 1.0.0
 | 세금 | 3.3% 원천징수 | 근로소득세 |
 | 법적 보호 | 민법만 | 근로기준법 |
 
-**위장 프리랜서 주의**: 실질적 지휘감독이 있으면 근로자로 판단. `{SKILL_DIR}/../shared/references/freelancer-tax.md` 참조.
+**위장 프리랜서 주의**: 실질적 지휘감독이 있으면 근로자로 판단. `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/references/freelancer-tax.md` 참조.
 
 ## 법령 근거 (MUST READ)
 
 작업 시작 전 반드시 다음을 읽는다:
 
-1. `{SKILL_DIR}/../shared/references/freelancer-tax.md` — 원천징수·위장 프리랜서 판단 기준
-2. `{SKILL_DIR}/../shared/references/contract-glossary.md` — 전문용어 쉬운 설명
-3. `{SKILL_DIR}/../shared/references/penalty-risks.md` — 위반 시 제재
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/references/freelancer-tax.md` — 원천징수·위장 프리랜서 판단 기준
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/references/contract-glossary.md` — 전문용어 쉬운 설명
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/references/penalty-risks.md` — 위반 시 제재
 
 ## 인터뷰 규칙
 
-- `{SKILL_DIR}/../shared/interview-all.md`의 [프리랜서 계약서] Step F1~F6을 순서대로 진행
-- 전문용어는 `{SKILL_DIR}/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/interview-all.md`의 [프리랜서 계약서] Step F1~F6을 순서대로 진행
+- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
 
 ## 동작 순서
 
 ### 1단계: 인터뷰
 
-`{SKILL_DIR}/../shared/interview-all.md`의 [프리랜서 계약서] Step F1~F6을 순차 진행.
+`/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/interview-all.md`의 [프리랜서 계약서] Step F1~F6을 순차 진행.
 
 ### 2단계: 원천징수 금액 자동 계산
 
@@ -81,7 +81,7 @@ version: 1.0.0
 
 ### 3단계: 템플릿 치환
 
-`{SKILL_DIR}/../shared/render.md` 프로토콜 따라 `{SKILL_DIR}/../shared/templates/freelancer-contract.tmpl` 치환.
+`/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/../shared/templates/freelancer-contract.tmpl` 치환.
 
 ### 4단계: 파일 생성
 

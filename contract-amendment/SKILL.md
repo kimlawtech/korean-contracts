@@ -4,7 +4,7 @@ description: 기존 근로계약서의 근로조건을 변경할 때 사용하�
 license: Apache-2.0
 version: 1.0.0
 ---
-<!-- {SKILL_DIR} = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {SKILL_DIR}을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- /Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 
 # Contract Amendment Skill — 근로조건 변경 합의서
@@ -46,9 +46,9 @@ version: 1.0.0
 
 ## 법령 근거 (MUST READ)
 
-1. `{SKILL_DIR}/../shared/references/labor-law-checklist.md` — 근로기준법 §17, 불이익 변경 원칙
-2. `{SKILL_DIR}/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원
-3. `{SKILL_DIR}/../shared/references/penalty-risks.md` — 일방적 근로조건 변경 시 제재
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/labor-law-checklist.md` — 근로기준법 §17, 불이익 변경 원칙
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/penalty-risks.md` — 일방적 근로조건 변경 시 제재
 
 ## 핵심 법리 (변경 합의서 특유)
 
@@ -79,8 +79,8 @@ version: 1.0.0
 
 ## 인터뷰 규칙
 
-- `{SKILL_DIR}/../shared/interview-all.md`의 [근로조건 변경 합의서] 섹션 진행
-- 전문용어는 `{SKILL_DIR}/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/interview-all.md`의 [근로조건 변경 합의서] 섹션 진행
+- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
 
 ## 동작 순서
@@ -137,7 +137,7 @@ version: 1.0.0
 
 ### 6단계: 템플릿 치환 및 파일 생성
 
-`{SKILL_DIR}/../shared/render.md` 프로토콜 따라 `{SKILL_DIR}/../shared/templates/contract-amendment.tmpl` 치환.
+`/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/templates/contract-amendment.tmpl` 치환.
 
 파일명: `contract-amendment-{근로자명}-{YYYYMMDD}.md`
 

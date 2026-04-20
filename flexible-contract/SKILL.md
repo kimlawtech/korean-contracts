@@ -4,7 +4,7 @@ description: 유연근무제(탄력근로·선택근로·재택근무) 적용 �
 license: Apache-2.0
 version: 1.0.0
 ---
-<!-- {SKILL_DIR} = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {SKILL_DIR}을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- /Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 
 # Flexible Work Contract Skill — 유연근무 근로계약서
@@ -58,15 +58,15 @@ version: 1.0.0
 
 ## 법령 근거 (MUST READ)
 
-1. `{SKILL_DIR}/../shared/references/labor-law-checklist.md` — 유연근무제 조항 포함
-2. `{SKILL_DIR}/../shared/references/minimum-wage-2026.md` — 최저임금·가산수당 계산
-3. `{SKILL_DIR}/../shared/references/four-insurance.md` — 4대보험 기준
-4. `{SKILL_DIR}/../shared/references/contract-glossary.md` — 전문용어 설명
-5. `{SKILL_DIR}/../shared/references/penalty-risks.md` — 위반 제재
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/labor-law-checklist.md` — 유연근무제 조항 포함
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/minimum-wage-2026.md` — 최저임금·가산수당 계산
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/four-insurance.md` — 4대보험 기준
+4. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/contract-glossary.md` — 전문용어 설명
+5. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/penalty-risks.md` — 위반 제재
 
 ## 인터뷰 규칙
 
-- `{SKILL_DIR}/../shared/interview-all.md`의 [유연근무 계약서] 섹션 진행
+- `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/interview-all.md`의 [유연근무 계약서] 섹션 진행
 - 유연근무 유형 설명 시 쉬운 예시 필수
 - 서면합의서·취업규칙 필요성 안내
 
@@ -147,7 +147,7 @@ version: 1.0.0
 
 ### 6단계: 템플릿 치환 및 파일 생성
 
-`{SKILL_DIR}/../shared/render.md` 프로토콜 따라 `{SKILL_DIR}/../shared/templates/flexible-contract.tmpl` 치환.
+`/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/templates/flexible-contract.tmpl` 치환.
 파일명: `flexible-contract-{근로자명}-{YYYYMMDD}.md`
 
 필수 검증:

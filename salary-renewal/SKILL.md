@@ -4,7 +4,7 @@ description: 연봉 갱신 시 사용하는 연봉계약서 자동 작성 스킬
 license: Apache-2.0
 version: 1.0.0
 ---
-<!-- {SKILL_DIR} = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {SKILL_DIR}을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- /Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 
 # Salary Renewal Skill — 연봉계약서 (연봉 갱신용)
@@ -46,10 +46,10 @@ version: 1.0.0
 
 ## 법령 근거 (MUST READ)
 
-1. `{SKILL_DIR}/../shared/references/labor-law-checklist.md` — 근로기준법 §17, 임금 명시 의무
-2. `{SKILL_DIR}/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원, 고정OT 검증
-3. `{SKILL_DIR}/../shared/references/four-insurance.md` — 4대보험 의무 가입
-4. `{SKILL_DIR}/../shared/references/penalty-risks.md` — 임금체불 제재 (2026: 5년 이하 징역)
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/references/labor-law-checklist.md` — 근로기준법 §17, 임금 명시 의무
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원, 고정OT 검증
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/references/four-insurance.md` — 4대보험 의무 가입
+4. `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/references/penalty-risks.md` — 임금체불 제재 (2026: 5년 이하 징역)
 
 ## 핵심 법리 (연봉계약서 특유)
 
@@ -90,8 +90,8 @@ version: 1.0.0
 
 ## 인터뷰 규칙
 
-- `{SKILL_DIR}/../shared/interview-all.md`의 [연봉계약서] 섹션 진행
-- 전문용어는 `{SKILL_DIR}/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/interview-all.md`의 [연봉계약서] 섹션 진행
+- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
 
 ## 동작 순서
@@ -151,7 +151,7 @@ version: 1.0.0
 
 ### 6단계: 템플릿 치환 및 파일 생성
 
-`{SKILL_DIR}/../shared/render.md` 프로토콜 따라 `{SKILL_DIR}/../shared/templates/salary-renewal.tmpl` 치환.
+`/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/../shared/templates/salary-renewal.tmpl` 치환.
 
 파일명: `salary-renewal-{근로자명}-{YYYYMMDD}.md`
 

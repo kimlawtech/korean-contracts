@@ -4,7 +4,7 @@ description: 일용근로자(일당제·건설·배달·행사 스태프 등) �
 license: Apache-2.0
 version: 1.0.0
 ---
-<!-- {SKILL_DIR} = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {SKILL_DIR}을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- /Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 
 # Daily Worker Contract Skill — 일용근로자 근로계약서
@@ -45,10 +45,10 @@ version: 1.0.0
 
 ## 법령 근거 (MUST READ)
 
-1. `{SKILL_DIR}/../shared/references/labor-law-checklist.md` — 일용근로자 정의, §17 적용 범위
-2. `{SKILL_DIR}/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원
-3. `{SKILL_DIR}/../shared/references/four-insurance.md` — 일용근로자 4대보험 가입 기준
-4. `{SKILL_DIR}/../shared/references/penalty-risks.md` — 미신고 시 제재
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/references/labor-law-checklist.md` — 일용근로자 정의, §17 적용 범위
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/references/four-insurance.md` — 일용근로자 4대보험 가입 기준
+4. `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/references/penalty-risks.md` — 미신고 시 제재
 
 ## 핵심 법리 (일용근로자 특유)
 
@@ -107,8 +107,8 @@ version: 1.0.0
 
 ## 인터뷰 규칙
 
-- `{SKILL_DIR}/../shared/interview-all.md`의 [일용근로자 계약서] 섹션 진행
-- 전문용어는 `{SKILL_DIR}/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/interview-all.md`의 [일용근로자 계약서] 섹션 진행
+- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
 
 ## 동작 순서
@@ -184,7 +184,7 @@ version: 1.0.0
 
 ### 6단계: 템플릿 치환 및 파일 생성
 
-`{SKILL_DIR}/../shared/render.md` 프로토콜 따라 `{SKILL_DIR}/../shared/templates/daily-worker-contract.tmpl` 치환.
+`/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/../shared/templates/daily-worker-contract.tmpl` 치환.
 
 파일명: `daily-worker-contract-{근로자명}-{YYYYMMDD}.md`
 

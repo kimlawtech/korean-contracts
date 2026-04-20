@@ -6,6 +6,7 @@ set -e
 
 SKILLS_DIR="${CLAUDE_SKILLS_DIR:-$HOME/.claude/skills}"
 REPO_DIR="$(cd "$(dirname "$0")" && pwd)"
+SHARED_DIR="$REPO_DIR/shared"
 
 echo "설치 경로: $SKILLS_DIR"
 echo "소스 경로: $REPO_DIR"
@@ -18,7 +19,6 @@ if [ ! -d "$SKILLS_DIR" ]; then
   exit 1
 fi
 
-# 기존 심링크 제거 후 재생성
 SKILLS=(
   "korean-contracts"
   "employment-contract"
@@ -31,13 +31,24 @@ SKILLS=(
   "daily-worker-contract"
 )
 
+# {SKILL_DIR}을 실제 절대 경로로 치환
+for skill in "${SKILLS[@]}"; do
+  SKILL_MD="$REPO_DIR/$skill/SKILL.md"
+  if [ -f "$SKILL_MD" ]; then
+    ACTUAL_DIR="$REPO_DIR/$skill"
+    sed -i '' "s|{SKILL_DIR}|$ACTUAL_DIR|g" "$SKILL_MD"
+  fi
+done
+
+echo "경로 치환 완료"
+
+# 심링크 생성
 for skill in "${SKILLS[@]}"; do
   TARGET="$SKILLS_DIR/$skill"
   SOURCE="$REPO_DIR/$skill"
 
   if [ -L "$TARGET" ]; then
     rm "$TARGET"
-    echo "기존 심링크 제거: $TARGET"
   elif [ -d "$TARGET" ]; then
     echo "경고: $TARGET 이 일반 디렉토리로 존재합니다. 건너뜁니다."
     continue
