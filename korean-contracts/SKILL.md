@@ -20,15 +20,27 @@ version: 2.1.0
 ```
 ⚠️  보안 모드: MCP 서버 미연결 — 개인정보가 Claude 컨텍스트에 평문으로 노출됩니다.
 
-    [자동 설치 방법 — 터미널에서 1회 실행]
-      bash ~/Desktop/skill/korean-contracts/install.sh
-      → Python 의존성 + Claude Desktop 설정 자동 등록
-      → 실행 후 Claude Desktop Cmd+Q 후 재실행
+    [자동 설치 — 1회 실행, <클론 경로>는 git clone 받은 폴더 경로]
 
-    [수동 설치 방법]
-      1) pip3 install mcp python-docx
-      2) python3 ~/Desktop/skill/korean-contracts/mcp-server/install-config.py
-      3) Claude Desktop 재시작
+      macOS:
+        bash <클론 경로>/install.sh
+        → 실행 후 Claude Desktop 완전 종료(Cmd+Q) 후 재실행
+
+      Windows (PowerShell):
+        powershell -ExecutionPolicy Bypass -File <클론 경로>\install.ps1
+        → 실행 후 Claude Desktop 완전 종료(트레이 우클릭 → Quit) 후 재실행
+
+    [수동 설치]
+
+      macOS / Linux:
+        1) pip3 install mcp python-docx
+        2) python3 <클론 경로>/mcp-server/install-config.py
+        3) Claude Desktop 재시작
+
+      Windows:
+        1) pip install mcp python-docx
+        2) python <클론 경로>\mcp-server\install-config.py
+        3) Claude Desktop 재시작
 
     MCP 없이도 계약서 작성은 가능합니다 (플레이스홀더 모드).
     민감 정보는 생성된 파일에서 [ ] 자리에 직접 기입하세요.

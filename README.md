@@ -176,26 +176,47 @@ MCP가 연결되지 않은 환경에서는 **플레이스홀더 모드**로 자�
 
 ### 설치 명령
 
+**macOS / Linux**
+
 ```bash
 git clone https://github.com/kimlawtech/korean-contracts
 cd korean-contracts
 bash install.sh
 ```
 
-`install.sh`는 각 스킬을 `~/.claude/skills/`에 심링크로 연결합니다.
-설치 후 Claude Code를 재시작하면 명령어가 활성화됩니다.
+**Windows (PowerShell)**
 
-설치 경로를 변경하려면:
+```powershell
+git clone https://github.com/kimlawtech/korean-contracts
+cd korean-contracts
+powershell -ExecutionPolicy Bypass -File install.ps1
+```
+
+설치 스크립트가 자동으로 처리하는 것:
+1. 각 스킬을 `~/.claude/skills/`에 심링크(macOS) 또는 Junction(Windows)으로 연결
+2. Python 의존성 설치 (`mcp`, `python-docx`)
+3. Claude Desktop 설정 파일에 MCP 서버 자동 등록
+   - macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+   - Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+설치 후 **Claude Desktop을 완전히 종료 후 재실행**하면 MCP 서버가 자동 연결됩니다.
+
+### 설치 경로 커스터마이즈
 
 ```bash
+# macOS / Linux
 CLAUDE_SKILLS_DIR=/your-project/.claude/skills bash install.sh
 ```
 
-python-docx 설치:
-
-```bash
-pip install python-docx
+```powershell
+# Windows
+$env:CLAUDE_SKILLS_DIR="C:\your-project\.claude\skills"
+powershell -ExecutionPolicy Bypass -File install.ps1
 ```
+
+### Linux 사용자 안내
+
+Linux는 현재 **Claude Desktop 미지원**입니다. 스킬 자체는 Claude Code CLI에서 사용 가능하지만, MCP 보안 서버는 작동하지 않으므로 플레이스홀더 모드로만 이용할 수 있습니다.
 
 ---
 
@@ -245,7 +266,8 @@ pip install python-docx
 korean-contracts/
 ├── README.md
 ├── DISCLAIMER.md
-├── install.sh
+├── install.sh                    macOS·Linux용 자동 설치
+├── install.ps1                   Windows PowerShell용 자동 설치
 │
 ├── korean-contracts/           ← /korean-contracts (진입점 라우터)
 │   └── SKILL.md
