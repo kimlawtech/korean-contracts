@@ -90,6 +90,10 @@ version: 1.0.0
 상여금·성과급은 별도 지급 계획 명시 권장
 ```
 
+## 기존 계약서 확인 (최우선)
+
+인터뷰 시작 전 반드시 기존 계약서 보유 여부를 확인한다. 있으면 내용 분석 후 누락·오류 항목만 추가 질문. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`로 즉시 검증.
+
 ## 인터뷰 규칙
 
 - `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [연봉계약서] 섹션 진행

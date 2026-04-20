@@ -60,6 +60,10 @@ Read 툴로 위 경로를 직접 읽어야 한다.
 4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md` — 전문용어 쉬운 설명
 5. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md` — 위반 시 제재
 
+## 기존 계약서 확인 (최우선)
+
+인터뷰 시작 전 반드시 기존 계약서 보유 여부를 확인한다. 있으면 내용 분석 후 누락·오류 항목만 추가 질문. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`로 즉시 검증.
+
 ## 인터뷰 규칙
 
 - `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로계약서] 섹션 진행

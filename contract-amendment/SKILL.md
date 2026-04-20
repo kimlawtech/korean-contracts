@@ -79,6 +79,10 @@ version: 1.0.0
 → 대규모 조건 변경(3개 항목 이상)이면 신규 계약서 권장
 ```
 
+## 기존 계약서 확인 (최우선)
+
+인터뷰 시작 전 반드시 기존 계약서 보유 여부를 확인한다. 있으면 내용 분석 후 누락·오류 항목만 추가 질문. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`로 즉시 검증.
+
 ## 인터뷰 규칙
 
 - `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로조건 변경 합의서] 섹션 진행
