@@ -29,12 +29,20 @@ $Skills = @(
     "daily-worker-contract"
 )
 
-# {SKILL_DIR} 치환
+# {SKILL_DIR}, {REPO_DIR}, {REPO_DIR_WIN} 치환
+# Windows 환경 — POSIX 경로는 슬래시, Windows 경로는 백슬래시
+$repoDirPosix = $RepoDir.Replace('\', '/')
+$repoDirWin = $RepoDir  # 백슬래시 유지
+
 foreach ($skill in $Skills) {
     $skillMd = Join-Path $RepoDir "$skill\SKILL.md"
     if (Test-Path $skillMd) {
-        $actualDir = Join-Path $RepoDir $skill
-        (Get-Content $skillMd -Raw) -replace '\{SKILL_DIR\}', $actualDir.Replace('\', '/') | Set-Content $skillMd -NoNewline
+        $actualDir = (Join-Path $RepoDir $skill).Replace('\', '/')
+        $content = Get-Content $skillMd -Raw
+        $content = $content -replace '\{SKILL_DIR\}', $actualDir
+        $content = $content -replace '\{REPO_DIR_WIN\}', $repoDirWin.Replace('\', '\\')
+        $content = $content -replace '\{REPO_DIR\}', $repoDirPosix
+        $content | Set-Content $skillMd -NoNewline
     }
 }
 

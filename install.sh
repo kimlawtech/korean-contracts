@@ -31,12 +31,15 @@ SKILLS=(
   "daily-worker-contract"
 )
 
-# {SKILL_DIR}을 실제 절대 경로로 치환
+# {SKILL_DIR}, {REPO_DIR}, {REPO_DIR_WIN}을 실제 절대 경로로 치환
+# macOS/Linux 환경 — POSIX 경로는 그대로, Windows 경로는 POSIX 경로 그대로 안내 (크로스 플랫폼 설명용)
 for skill in "${SKILLS[@]}"; do
   SKILL_MD="$REPO_DIR/$skill/SKILL.md"
   if [ -f "$SKILL_MD" ]; then
     ACTUAL_DIR="$REPO_DIR/$skill"
     sed -i '' "s|{SKILL_DIR}|$ACTUAL_DIR|g" "$SKILL_MD"
+    sed -i '' "s|{REPO_DIR_WIN}|$REPO_DIR|g" "$SKILL_MD"
+    sed -i '' "s|{REPO_DIR}|$REPO_DIR|g" "$SKILL_MD"
   fi
 done
 

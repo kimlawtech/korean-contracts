@@ -20,31 +20,23 @@ version: 2.1.0
 ```
 ⚠️  보안 모드: MCP 서버 미연결 — 개인정보가 Claude 컨텍스트에 평문으로 노출됩니다.
 
-    [자동 설치 — 1회 실행, <클론 경로>는 git clone 받은 폴더 경로]
-
-      macOS:
-        bash <클론 경로>/install.sh
-        → 실행 후 Claude Desktop 완전 종료(Cmd+Q) 후 재실행
-
-      Windows (PowerShell):
-        powershell -ExecutionPolicy Bypass -File <클론 경로>\install.ps1
-        → 실행 후 Claude Desktop 완전 종료(트레이 우클릭 → Quit) 후 재실행
-
-    [수동 설치]
+    [1회 자동 설치 — 터미널에 그대로 복붙]
 
       macOS / Linux:
-        1) pip3 install mcp python-docx
-        2) python3 <클론 경로>/mcp-server/install-config.py
-        3) Claude Desktop 재시작
+        bash {REPO_DIR}/install.sh
 
-      Windows:
-        1) pip install mcp python-docx
-        2) python <클론 경로>\mcp-server\install-config.py
-        3) Claude Desktop 재시작
+      Windows (PowerShell):
+        powershell -ExecutionPolicy Bypass -File {REPO_DIR_WIN}\install.ps1
+
+    설치 후 Claude Desktop을 완전히 종료 후 재실행하면 자동 연결됩니다.
+
+    상세 설치 가이드: https://github.com/kimlawtech/korean-contracts#설치
 
     MCP 없이도 계약서 작성은 가능합니다 (플레이스홀더 모드).
     민감 정보는 생성된 파일에서 [ ] 자리에 직접 기입하세요.
 ```
+
+**중요**: `{REPO_DIR}` / `{REPO_DIR_WIN}` 플레이스홀더는 `install.sh` / `install.ps1` 실행 시 실제 클론 경로로 자동 치환됩니다. 아직 치환되지 않은 상태라면 사용자에게 "이 스킬이 어느 폴더에 클론되어 있나요?"라고 물어 경로를 받은 뒤 해당 경로를 삽입해 안내합니다.
 
 프리플라이트가 끝나면 아래 메뉴를 출력한다. 상태 문구는 배너 바로 아래 한 줄로 삽입한다.
 
@@ -89,14 +81,14 @@ version: 2.1.0
 
 | 입력 | 읽을 파일 | 키워드 트리거 |
 |------|-----------|--------------|
-| 1 | `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/SKILL.md` | 근로계약, 정규직, 계약직, 직원 |
-| 2 | `/Users/sarangcho/Desktop/skill/korean-contracts/parttime-contract/SKILL.md` | 알바, 아르바이트, 파트타임, 단시간 |
-| 3 | `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/SKILL.md` | 유연근무, 탄력근로, 선택근로, 재택 |
-| 4 | `/Users/sarangcho/Desktop/skill/korean-contracts/daily-worker-contract/SKILL.md` | 일용직, 일당, 건설, 행사 |
-| 5 | `/Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract/SKILL.md` | 프리랜서, 3.3, 용역, 외주 개인 |
-| 6 | `/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/SKILL.md` | 외주용역, 법인, 세금계산서, B2B |
-| 7 | `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/SKILL.md` | 변경, 합의서, 수정, 조건 변경 |
-| 8 | `/Users/sarangcho/Desktop/skill/korean-contracts/salary-renewal/SKILL.md` | 연봉, 연봉계약, 갱신, 인상 |
+| 1 | `{REPO_DIR}/employment-contract/SKILL.md` | 근로계약, 정규직, 계약직, 직원 |
+| 2 | `{REPO_DIR}/parttime-contract/SKILL.md` | 알바, 아르바이트, 파트타임, 단시간 |
+| 3 | `{REPO_DIR}/flexible-contract/SKILL.md` | 유연근무, 탄력근로, 선택근로, 재택 |
+| 4 | `{REPO_DIR}/daily-worker-contract/SKILL.md` | 일용직, 일당, 건설, 행사 |
+| 5 | `{REPO_DIR}/freelancer-contract/SKILL.md` | 프리랜서, 3.3, 용역, 외주 개인 |
+| 6 | `{REPO_DIR}/outsourcing-contract/SKILL.md` | 외주용역, 법인, 세금계산서, B2B |
+| 7 | `{REPO_DIR}/contract-amendment/SKILL.md` | 변경, 합의서, 수정, 조건 변경 |
+| 8 | `{REPO_DIR}/salary-renewal/SKILL.md` | 연봉, 연봉계약, 갱신, 인상 |
 | 9 | — (아래 진단 가이드 실행) | 모르겠어, 잘 모름 |
 
 **진입 즉시 출력 형식:**
