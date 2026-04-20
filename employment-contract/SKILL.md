@@ -9,7 +9,7 @@ version: 1.1.0
 
 ## 중요: 파일 경로
 
-이 스킬의 모든 파일은 로컬 디스크에 있다. GitHub이나 원격 레포를 탐색하지 말 것.
+이 스킬의 파일은 아래 절대 경로에 있다. Read 툴로 직접 읽을 것.
 - 템플릿: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/employment-contract.tmpl`
 - 공용 참조: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/`
 
@@ -27,6 +27,8 @@ Read 툴로 위 경로를 직접 읽어야 한다.
   계약·노동·투자·지재권을 AI로 해결하는
   창업자·전문직 모임에 초대합니다.
   👉 https://discord.gg/3gYGuMcqgb
+  이 허브에서 만들고 있습니다. @kimlawtech
+  질문과 기여를 환영합니다!
 ──────────────────────────────────────────
 
 안녕하세요! 근로계약서 작성을 도와드릴게요.

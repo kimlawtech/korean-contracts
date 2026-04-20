@@ -159,7 +159,7 @@ korean-contracts/
 
 **초대 링크**: [discord.gg/3gYGuMcqgb](https://discord.gg/3gYGuMcqgb)
 
-운영: [@kimlawtech](https://github.com/kimlawtech)
+이 허브에서 만들고 있습니다. [@kimlawtech](https://github.com/kimlawtech) — 질문과 기여를 환영합니다!
 
 ## License
 
