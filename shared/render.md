@@ -84,42 +84,54 @@ Handlebars 문법:
 - [ ] 최저임금 이상 여부
 - [ ] 면책 문구 최상단 포함 여부
 
-### Step E: 파일명 결정
+### Step E: 파일명 및 저장 경로 결정
+
+저장 경로는 인터뷰 Step SAVE에서 수집한 `outputDir` 사용. 미수집 시 `~/Desktop` 기본값.
 
 ```
-근로계약서 (주40시간): employment-contract-{employeeName}-{YYYYMMDD}.md
-알바·단시간:          parttime-contract-{employeeName}-{YYYYMMDD}.md
-유연근무:             flexible-contract-{employeeName}-{YYYYMMDD}.md
-프리랜서:             freelancer-contract-{freelancerName}-{YYYYMMDD}.md
-외주용역:             outsourcing-contract-{vendorCompany}-{YYYYMMDD}.md
-근로조건 변경:        contract-amendment-{employeeName}-{YYYYMMDD}.md
-연봉계약서:           salary-renewal-{employeeName}-{YYYYMMDD}.md
-일용근로자:           daily-worker-contract-{employeeName}-{YYYYMMDD}.md
+근로계약서 (주40시간): {outputDir}/employment-contract-{employeeName}-{YYYYMMDD}
+알바·단시간:          {outputDir}/parttime-contract-{employeeName}-{YYYYMMDD}
+유연근무:             {outputDir}/flexible-contract-{employeeName}-{YYYYMMDD}
+프리랜서:             {outputDir}/freelancer-contract-{freelancerName}-{YYYYMMDD}
+외주용역:             {outputDir}/outsourcing-contract-{vendorCompany}-{YYYYMMDD}
+근로조건 변경:        {outputDir}/contract-amendment-{employeeName}-{YYYYMMDD}
+연봉계약서:           {outputDir}/salary-renewal-{employeeName}-{YYYYMMDD}
+일용근로자:           {outputDir}/daily-worker-contract-{employeeName}-{YYYYMMDD}
 ```
 
-### Step F: DOCX 변환 (필수 — 마크다운 저장 후 반드시 실행)
+각 계약서마다 `.txt` 와 `.docx` 두 파일 모두 생성.
 
-마크다운(.md) 저장이 완료되면 즉시 아래 명령으로 Word 파일을 생성한다.
+### Step F: TXT + DOCX 생성 (필수)
+
+**F-1: TXT 저장**
+
+마크다운 내용을 `.txt` 확장자로 먼저 저장.
+
+```
+저장 경로: {outputDir}/{파일명}.txt
+```
+
+**F-2: DOCX 변환**
+
+TXT 저장 후 즉시 아래 명령으로 Word 파일 생성.
 
 ```bash
-python3 "$(dirname $0)/../shared/docx-generator.py" "{생성된.md파일경로}"
+python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py \
+  "{outputDir}/{파일명}.txt"
 ```
 
-예시:
-```bash
-python3 ~/.claude/skills/korean-contracts/shared/docx-generator.py \
-  employment-contract-이직원-20260420.md
-```
-
-- 출력 파일명: 동일 경로에 `.docx` 확장자로 자동 저장
+- 출력 파일: `{outputDir}/{파일명}.docx` (자동 저장)
 - 폰트: 굴림 (본문 10pt, 제목 16/13/11pt)
 - 스타일: 면책문구 회색, 제목 진한 네이비, 표 헤더 배경색
-- `.md` 파일은 임시 파일이므로 `.docx` 생성 후 사용자에게 `.docx` 경로만 안내
 
 사용자에게 전달할 멘트:
 ```
-계약서가 Word 파일로 저장됐습니다.
-파일: {파일명}.docx
+계약서 두 파일이 저장됐습니다.
+
+  📄 {파일명}.txt
+  📄 {파일명}.docx
+
+저장 위치: {outputDir}
 
 서명 전 내용을 확인하시고, 필요하면 수정해서 사용하세요.
 실제 서명 전 노무사·변호사 검토를 권장합니다.
