@@ -44,16 +44,16 @@ version: 1.1.0
 
 ## 법령 근거 (MUST READ)
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/references/labor-law-checklist.md` — 근로기준법 §17 필수 5항목 + 5인 미만/이상 비교
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원, 가산수당 계산
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/references/four-insurance.md` — 4대보험 의무 가입 기준
-4. `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/references/contract-glossary.md` — 전문용어 쉬운 설명
-5. `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/references/penalty-risks.md` — 위반 시 제재
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/labor-law-checklist.md` — 근로기준법 §17 필수 5항목 + 5인 미만/이상 비교
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원, 가산수당 계산
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/four-insurance.md` — 4대보험 의무 가입 기준
+4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md` — 전문용어 쉬운 설명
+5. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md` — 위반 시 제재
 
 ## 인터뷰 규칙
 
-- `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/interview-all.md`의 [근로계약서] 섹션 진행
-- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로계약서] 섹션 진행
+- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
 
 ## 동작 순서
@@ -79,7 +79,7 @@ version: 1.1.0
 
 ### 3단계: 전체 인터뷰
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/interview-all.md`의 [근로계약서] Step 1~11 순차 진행.
+`/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로계약서] Step 1~11 순차 진행.
 
 ### 4단계: 최저임금 검증
 
@@ -94,7 +94,7 @@ version: 1.1.0
 
 ### 5단계: 템플릿 치환
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/employment-contract/../shared/templates/employment-contract.tmpl` 치환.
+`Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/employment-contract.tmpl` 파일을 반드시 읽은 뒤 변수를 치환한다. 파일이 없다고 가정하지 말고 반드시 Read 툴을 실행할 것. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
 
 **5인 미만 분기:**
 - 가산수당 조항 제거

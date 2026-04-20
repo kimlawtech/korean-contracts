@@ -57,21 +57,21 @@ version: 1.0.0
 
 작업 시작 전 반드시 다음을 읽는다:
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/references/outsourcing-law.md` — 도급·위임 구분, 불법파견 기준
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/references/contract-glossary.md` — 전문용어 쉬운 설명
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/references/penalty-risks.md` — 위반 시 제재 (불법파견·하도급법)
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/outsourcing-law.md` — 도급·위임 구분, 불법파견 기준
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md` — 전문용어 쉬운 설명
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md` — 위반 시 제재 (불법파견·하도급법)
 
 ## 인터뷰 규칙
 
-- `/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/interview-all.md`의 [외주용역계약서] Step O1~O7을 순서대로 진행
-- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [외주용역계약서] Step O1~O7을 순서대로 진행
+- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
 
 ## 동작 순서
 
 ### 1단계: 인터뷰
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/interview-all.md`의 [외주용역계약서] Step O1~O7을 순차 진행.
+`/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [외주용역계약서] Step O1~O7을 순차 진행.
 
 ### 2단계: 부가세 금액 자동 계산
 
@@ -93,7 +93,7 @@ version: 1.0.0
 
 ### 4단계: 템플릿 치환
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract/../shared/templates/outsourcing-contract.tmpl` 치환.
+`Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/outsourcing-contract.tmpl` 파일을 반드시 읽은 뒤 변수를 치환한다. 파일이 없다고 가정하지 말고 반드시 Read 툴을 실행할 것. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
 
 ### 5단계: 파일 생성
 

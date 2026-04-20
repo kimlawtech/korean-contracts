@@ -46,9 +46,9 @@ version: 1.0.0
 
 ## 법령 근거 (MUST READ)
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/labor-law-checklist.md` — 근로기준법 §17, 불이익 변경 원칙
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/penalty-risks.md` — 일방적 근로조건 변경 시 제재
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/labor-law-checklist.md` — 근로기준법 §17, 불이익 변경 원칙
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md` — 일방적 근로조건 변경 시 제재
 
 ## 핵심 법리 (변경 합의서 특유)
 
@@ -79,8 +79,8 @@ version: 1.0.0
 
 ## 인터뷰 규칙
 
-- `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/interview-all.md`의 [근로조건 변경 합의서] 섹션 진행
-- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로조건 변경 합의서] 섹션 진행
+- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
 
 ## 동작 순서
@@ -137,7 +137,7 @@ version: 1.0.0
 
 ### 6단계: 템플릿 치환 및 파일 생성
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment/../shared/templates/contract-amendment.tmpl` 치환.
+`Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/contract-amendment.tmpl` 파일을 반드시 읽은 뒤 변수를 치환한다. 파일이 없다고 가정하지 말고 반드시 Read 툴을 실행할 것. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
 
 파일명: `contract-amendment-{근로자명}-{YYYYMMDD}.md`
 

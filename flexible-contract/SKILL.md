@@ -58,15 +58,15 @@ version: 1.0.0
 
 ## 법령 근거 (MUST READ)
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/labor-law-checklist.md` — 유연근무제 조항 포함
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/minimum-wage-2026.md` — 최저임금·가산수당 계산
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/four-insurance.md` — 4대보험 기준
-4. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/contract-glossary.md` — 전문용어 설명
-5. `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/references/penalty-risks.md` — 위반 제재
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/labor-law-checklist.md` — 유연근무제 조항 포함
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/minimum-wage-2026.md` — 최저임금·가산수당 계산
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/four-insurance.md` — 4대보험 기준
+4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md` — 전문용어 설명
+5. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md` — 위반 제재
 
 ## 인터뷰 규칙
 
-- `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/interview-all.md`의 [유연근무 계약서] 섹션 진행
+- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [유연근무 계약서] 섹션 진행
 - 유연근무 유형 설명 시 쉬운 예시 필수
 - 서면합의서·취업규칙 필요성 안내
 
@@ -147,7 +147,7 @@ version: 1.0.0
 
 ### 6단계: 템플릿 치환 및 파일 생성
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/render.md` 프로토콜 따라 `/Users/sarangcho/Desktop/skill/korean-contracts/flexible-contract/../shared/templates/flexible-contract.tmpl` 치환.
+`Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/flexible-contract.tmpl` 파일을 반드시 읽은 뒤 변수를 치환한다. 파일이 없다고 가정하지 말고 반드시 Read 툴을 실행할 것. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
 파일명: `flexible-contract-{근로자명}-{YYYYMMDD}.md`
 
 필수 검증:
