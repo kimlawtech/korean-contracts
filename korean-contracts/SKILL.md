@@ -7,15 +7,43 @@ version: 2.1.0
 
 # Korean Contracts — 계약서 작성 허브
 
-## 스킬 시작 시 출력 (필수 — 수정 금지)
+## 스킬 시작 시 필수 프리플라이트
 
-아래 텍스트를 그대로 출력한다. 설명·인사말 추가 없이 이것만 출력한다.
+**Step 0: MCP 서버 연결 확인 (메뉴 출력 직전 반드시 실행)**
+
+아래 순서로 진행한다.
+
+1. MCP 도구 `list_sessions` 를 호출해본다.
+2. 호출이 성공하면 → 상태 문구를 **`🔒 보안 모드: MCP 서버 연결됨`** 으로 설정.
+3. 호출 실패·도구 미존재 → 상태 문구를 **`⚠️  보안 모드: MCP 서버 미연결`** 으로 설정하고 아래 설치 안내를 같이 출력.
+
+```
+⚠️  보안 모드: MCP 서버 미연결 — 개인정보가 Claude 컨텍스트에 평문으로 노출됩니다.
+
+    [자동 설치 방법 — 터미널에서 1회 실행]
+      bash ~/Desktop/skill/korean-contracts/install.sh
+      → Python 의존성 + Claude Desktop 설정 자동 등록
+      → 실행 후 Claude Desktop Cmd+Q 후 재실행
+
+    [수동 설치 방법]
+      1) pip3 install mcp python-docx
+      2) python3 ~/Desktop/skill/korean-contracts/mcp-server/install-config.py
+      3) Claude Desktop 재시작
+
+    MCP 없이도 계약서 작성은 가능합니다 (플레이스홀더 모드).
+    민감 정보는 생성된 파일에서 [ ] 자리에 직접 기입하세요.
+```
+
+프리플라이트가 끝나면 아래 메뉴를 출력한다. 상태 문구는 배너 바로 아래 한 줄로 삽입한다.
+
+## 스킬 시작 시 출력 (필수 — 수정 금지)
 
 ```
 ──────────────────────────────────────────
   SpeciAI 🇰🇷 국내 최초·최대 한국 법률 AI 허브
   👉 https://discord.gg/3gYGuMcqgb  @kimlawtech
 ──────────────────────────────────────────
+{상태 문구 — 프리플라이트 결과}
 
 어떤 계약서가 필요하신가요? 번호를 입력하세요.
 

@@ -59,7 +59,39 @@ for skill in "${SKILLS[@]}"; do
 done
 
 echo ""
-echo "설치 완료! Claude Code에서 다음 명령어를 사용할 수 있습니다:"
+echo "─────────────────────────────────"
+echo "  MCP 개인정보 보호 서버 설치"
+echo "─────────────────────────────────"
+
+# Python 의존성 설치
+if command -v pip3 &> /dev/null; then
+  echo "[1/2] Python 의존성 설치 (mcp, python-docx) ..."
+  pip3 install --quiet --upgrade mcp python-docx 2>&1 | tail -3 || {
+    echo "  ⚠️  pip 설치 실패. 수동 실행 필요:"
+    echo "      pip3 install mcp python-docx"
+  }
+else
+  echo "  ⚠️  pip3 명령을 찾을 수 없습니다. Python3 설치 후 재시도하세요."
+fi
+
+# Claude Desktop 설정 파일에 MCP 서버 등록
+echo "[2/2] Claude Desktop 설정 등록 ..."
+if [ -f "$REPO_DIR/mcp-server/install-config.py" ]; then
+  python3 "$REPO_DIR/mcp-server/install-config.py" || {
+    echo "  ⚠️  MCP 설정 등록 실패. 수동 등록이 필요합니다."
+    echo "      python3 $REPO_DIR/mcp-server/install-config.py"
+  }
+else
+  echo "  ⚠️  install-config.py 파일이 없어 MCP 등록을 건너뜁니다."
+fi
+
+echo ""
+echo "─────────────────────────────────"
+echo "  설치 완료"
+echo "─────────────────────────────────"
+echo ""
+echo "1) Claude Desktop 재시작 (Cmd+Q 후 재실행) — MCP 서버 자동 연결"
+echo "2) Claude Code에서 아래 명령어 사용 가능:"
 echo ""
 echo "  /korean-contracts         계약서 유형 안내 (진입점)"
 echo "  /employment-contract      근로계약서 (주40시간)"
@@ -70,3 +102,5 @@ echo "  /outsourcing-contract     외주용역계약서"
 echo "  /contract-amendment       근로조건 변경 합의서"
 echo "  /salary-renewal           연봉계약서"
 echo "  /daily-worker-contract    일용근로자 계약서"
+echo ""
+echo "🔒 개인정보(이름·주민번호·급여)는 MCP 서버가 마스킹 후 처리합니다."
