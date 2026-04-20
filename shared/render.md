@@ -48,6 +48,37 @@ hasIPClause: true
 effectiveDate: "2026-05-01"
 ```
 
+### Step A2: MCP 개인정보 마스킹 (필수 — Step B 전에 반드시 실행)
+
+변수 맵이 준비되면 MCP 도구 `mask_personal_info`를 호출해 개인정보를 마스킹한다.
+
+```
+MCP 호출:
+  도구: mask_personal_info
+  입력: 변수 맵 전체 (Step A에서 준비한 dict)
+
+반환값:
+  session_id: 세션 ID (Step F에서 save_contract 호출 시 필요 — 반드시 보관)
+  masked:     마스킹된 변수 맵 (이후 모든 처리는 이 값으로 진행)
+```
+
+**MCP 서버가 실행 중이지 않으면:**
+→ 사용자에게 안내:
+```
+⚠️  보안 모드(MCP 서버) 미연결 상태입니다.
+    개인정보가 포함된 계약서를 생성하려면 MCP 서버가 필요합니다.
+
+    실행 방법:
+      터미널에서: python3 ~/Desktop/skill/korean-contracts/mcp-server/server.py
+      또는 Claude Desktop 재시작 (자동 연결)
+
+    [계속하시겠어요?]
+    1) MCP 서버 연결 후 재시도 (권장)
+    2) 이름·주민번호·급여 등 민감 정보를 직접 입력하지 않고 계속 진행
+       (계약서 생성 후 [ ] 괄호 안에 직접 기입)
+```
+2번 선택 시: 민감 필드를 `[근로자 이름]`, `[주민번호 앞 6자리]`, `[기본급]` 형태의 괄호 플레이스홀더로 처리.
+
 ### Step B: 최저임금 검증 (2026년 기준: 10,320원/시)
 
 ```
@@ -111,17 +142,44 @@ Handlebars 문법:
 
 ### Step F: TXT + DOCX 생성 (필수)
 
-**F-1: TXT 저장**
+MCP 서버 연결 여부에 따라 두 경로로 분기한다.
 
-마크다운 내용을 `.txt` 확장자로 먼저 저장.
+#### F-A: MCP 서버 연결된 경우 (권장 — 개인정보 보호)
+
+`save_contract` MCP 도구를 호출한다.
+
+```
+MCP 호출:
+  도구: save_contract
+  입력:
+    session_id:    Step A2에서 받은 세션 ID
+    contract_text: 치환 완료된 계약서 전체 텍스트
+    contract_type: 파일명 prefix (예: "employment-contract-이직원-20260501")
+    output_dir:    Step SAVE에서 수집한 outputDir (기본값: ~/Desktop)
+
+반환값:
+  txt_path:  저장된 .txt 파일 경로
+  docx_path: 저장된 .docx 파일 경로
+```
+
+MCP 서버가 내부적으로 처리하는 것:
+1. 마스킹 토큰(PERSON_A, AMOUNT_3M 등)을 실제 값으로 복원
+2. .txt 파일 저장
+3. docx-generator.py 실행 → .docx 생성
+
+#### F-B: MCP 서버 미연결된 경우 (플레이스홀더 모드)
+
+Step A2에서 플레이스홀더 처리를 선택한 경우.
+
+**F-B-1: TXT 저장**
 
 ```
 저장 경로: {outputDir}/{파일명}.txt
 ```
 
-**F-2: DOCX 변환**
+Write 툴로 직접 저장한다.
 
-TXT 저장 후 즉시 아래 명령으로 Word 파일 생성.
+**F-B-2: DOCX 변환**
 
 ```bash
 python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py \
@@ -132,7 +190,8 @@ python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py
 - 폰트: 굴림 (본문 10pt, 제목 16/13/11pt)
 - 스타일: 면책문구 회색, 제목 진한 네이비, 표 헤더 배경색
 
-사용자에게 전달할 멘트:
+#### 완료 후 사용자에게 전달할 멘트
+
 ```
 계약서 두 파일이 저장됐습니다.
 

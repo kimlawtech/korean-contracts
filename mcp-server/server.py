@@ -201,10 +201,10 @@ def save_contract(
     del _sessions[session_id]
 
     return {
-        "status":   "saved",
-        "txt":      str(txt_path),
-        "docx":     docx_path or "변환 실패 — txt만 저장됨",
-        "message":  "개인정보는 로컬에서만 복원·저장됐습니다. Anthropic 서버에 전송되지 않았습니다.",
+        "status":    "saved",
+        "txt_path":  str(txt_path),
+        "docx_path": docx_path or "변환 실패 — txt만 저장됨",
+        "message":   "개인정보는 로컬에서만 복원·저장됐습니다. Anthropic 서버에 전송되지 않았습니다.",
     }
 
 
