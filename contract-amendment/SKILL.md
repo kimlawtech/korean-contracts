@@ -150,6 +150,10 @@ version: 1.0.0
 - [ ] 최저임금 10,320원 이상 (임금 변경 시)
 - [ ] 면책 문구 최상단
 
+## 법률 검증 (필수)
+
+계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` 를 Read 툴로 읽고 RULE 1~10 순서대로 자체 검토할 것. 오류 발견 시 수정 후 재저장.
+
 ## 금지 사항
 
 - 최저임금 미달 변경 합의서 생성 금지

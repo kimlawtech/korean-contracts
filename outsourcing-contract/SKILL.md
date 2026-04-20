@@ -130,6 +130,10 @@ Read 툴로 위 경로를 직접 읽어야 한다.
 > 작성 기준: 민법 도급 규정, 하도급법, 불법파견 방지 기준
 ```
 
+## 법률 검증 (필수)
+
+계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` 를 Read 툴로 읽고 RULE 1~10 순서대로 자체 검토할 것. 오류 발견 시 수정 후 재저장.
+
 ## 금지 사항
 
 - 불법파견 구조를 정상 외주 계약으로 작성 금지

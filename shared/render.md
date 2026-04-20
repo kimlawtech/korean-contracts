@@ -77,12 +77,20 @@ Handlebars 문법:
 - `{{#each 배열}}...{{/each}}` → 배열 수만큼 복제
 - `{{this.필드}}` → 반복 컨텍스트 내 속성
 
-### Step D: 검증 (Write 전 필수)
+### Step D: 1차 검증 (Write 전 필수)
 
 - [ ] `{{` 패턴이 남아있지 않은가
 - [ ] 근로계약서: 근로기준법 §17 5개 항목 포함 여부
 - [ ] 최저임금 이상 여부
 - [ ] 면책 문구 최상단 포함 여부
+
+### Step D2: 법률 검증 패스 (Write 후 필수)
+
+파일 저장 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` 를 Read 툴로 읽고 RULE 1~10을 순서대로 적용해 생성된 계약서를 검토한다.
+
+- 오류 발견 시: 계약서 내용을 수정하고 파일을 덮어쓴 뒤 수정 내역을 사용자에게 알림
+- 확인 필요 항목: 사용자에게 명시적으로 고지
+- 모든 룰 통과 시: 검증 결과 요약 출력
 
 ### Step E: 파일명 및 저장 경로 결정
 

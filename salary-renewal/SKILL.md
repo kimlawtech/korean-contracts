@@ -164,6 +164,10 @@ version: 1.0.0
 - [ ] 고정OT 시간·금액 명시 (포괄임금 시)
 - [ ] 면책 문구 최상단
 
+## 법률 검증 (필수)
+
+계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` 를 Read 툴로 읽고 RULE 1~10 순서대로 자체 검토할 것. 오류 발견 시 수정 후 재저장.
+
 ## 금지 사항
 
 - 최저임금 미달 연봉계약서 생성 금지
