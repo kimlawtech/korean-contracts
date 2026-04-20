@@ -353,6 +353,34 @@ korean-contracts/
 
 ---
 
+## 기여하기
+
+이 프로젝트는 커뮤니티 기여를 환영합니다.
+
+- **버그 제보·기능 제안**: [Issues](https://github.com/kimlawtech/korean-contracts/issues) 에서 양식에 맞춰 등록
+- **신규 계약 유형·법령 업데이트**: 전용 Issue 템플릿 제공
+- **Pull Request**: [CONTRIBUTING.md](CONTRIBUTING.md) 규칙 준수 필수
+- **커뮤니티 토론**: [Discord](https://discord.gg/3gYGuMcqgb)
+
+### 커밋 메시지 규칙
+
+```
+[LABEL] 한국어 단문
+```
+
+라벨: `[ADD]` · `[FIX]` · `[UPDATE]` · `[REMOVE]` 4종만 사용.
+자세한 규칙은 [CONTRIBUTING.md](CONTRIBUTING.md) 참고.
+
+### 법률 관련 기여 주의사항
+
+- 법령·판례 인용 시 **출처 명시 필수** (조문 번호·판례 번호)
+- 예시 데이터는 **가명·가상 정보만** 사용 (실명·실주민번호 금지)
+- **면책 문구 삭제 금지**
+
+행동 강령: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
+
+---
+
 ## 법적 면책
 
 본 스킬이 생성하는 문서는 **참고용 초안**이며 법률 자문이 아닙니다.
