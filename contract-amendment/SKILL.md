@@ -70,10 +70,11 @@ version: 2.0.0
 2) 없음 — 변경 내용만 알려주시면 합의서를 작성합니다.
 ```
 
-기존 계약서 제공 시:
-- 계약 유형, 당사자 정보, 현재 근무 조건, 임금 항목 자동 추출
-- 누락·오류 항목만 추가 질문
-- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` RULE 1~14 즉시 적용해 문제점 먼저 안내
+기존 계약서 제공 시 → `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
+- 계약 유형·당사자 정보·현재 근무 조건·임금 항목 자동 추출
+- 개정법령 비교 체크리스트 (A~I) + 불이익 변경 자동 판단 적용
+- ❌ 위반 / ⚠️ 개정법령 반영 필요 / 💡 개선 권고 3단계로 분류 출력
+- 사용자가 수정 항목 선택 → 선택 항목만 반영해 재작성
 
 ### Step 1~10: 전체 인터뷰
 

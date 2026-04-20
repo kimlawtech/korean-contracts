@@ -59,16 +59,18 @@ version: 2.0.0
 ```
 기존에 사용하던 계약서가 있으신가요?
 
-1) 있음 — 내용을 공유해 주세요.
-   → 법적 문제점을 먼저 안내하고 보완해 드립니다.
+1) 있음 — 파일을 붙여넣거나 내용을 공유해 주세요.
+   → 개정법령·최신 판례 기준으로 검토 결과를 먼저 드립니다.
+   → 수정할 항목을 고르시면 계약서를 재작성합니다.
 
 2) 없음 — 처음부터 새로 만들겠습니다.
 ```
 
-기존 계약서 제공 시:
-- 계약 유형, 당사자 정보, 근무 조건, 시급 자동 추출
-- 누락·오류 항목만 추가 질문
-- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` RULE 1~14 즉시 적용
+기존 계약서 제공 시 → `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
+- 계약 유형·당사자 정보·시급·근무일정 자동 추출
+- 개정법령 비교 체크리스트 (A~I) 순서대로 적용
+- ❌ 위반 / ⚠️ 개정법령 반영 필요 / 💡 개선 권고 3단계로 분류 출력
+- 사용자가 수정 항목 선택 → 선택 항목만 반영해 재작성
 
 ### Step 1~11: 전체 인터뷰
 

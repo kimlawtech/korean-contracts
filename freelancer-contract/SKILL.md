@@ -69,10 +69,11 @@ version: 2.0.0
 2) 없음 — 처음부터 새로 만들겠습니다.
 ```
 
-기존 계약서 제공 시:
-- 계약 유형, 당사자 정보, 업무 범위, 보수 항목 자동 추출
-- 누락·오류 항목만 추가 질문
-- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` RULE 1~14 즉시 적용해 문제점 먼저 안내
+기존 계약서 제공 시 → `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
+- 계약 유형·당사자 정보·업무 범위·보수 항목 자동 추출
+- 개정법령 비교 체크리스트 (A~I) + 위장 프리랜서 7대 요소 적용
+- ❌ 위반 / ⚠️ 개정법령 반영 필요 / 💡 개선 권고 3단계로 분류 출력
+- 사용자가 수정 항목 선택 → 선택 항목만 반영해 재작성
 
 ### Step F1~F6: 전체 인터뷰
 
