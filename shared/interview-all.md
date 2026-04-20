@@ -42,7 +42,7 @@ MCP 서버 미연결 또는 텍스트 붙여넣기 제공 시:
 - Read 툴 또는 붙여넣기로 내용 직접 수신
 
 이후 공통 처리:
-- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜 실행
+- `{REPO_DIR}/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜 실행
 - 계약 유형·당사자 정보·근무 조건·임금 항목 자동 추출
 - 개정법령 비교 체크리스트 (A~I) 순서대로 적용
 - ❌ 위반 / ⚠️ 개정법령 반영 필요 / 💡 개선 권고 3단계로 분류 출력

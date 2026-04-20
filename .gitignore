@@ -6,3 +6,6 @@ __pycache__/
 
 # 로컬 전용 (외부 비공개)
 THREAD.md
+
+# 개인 Claude Desktop 설정 (사용자별로 다름)
+mcp-server/claude_desktop_config.json

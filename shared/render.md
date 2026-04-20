@@ -117,7 +117,7 @@ Handlebars 문법:
 
 ### Step D2: 법률 검증 패스 (Write 후 필수)
 
-파일 저장 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` 를 Read 툴로 읽고 RULE 1~10을 순서대로 적용해 생성된 계약서를 검토한다.
+파일 저장 후 `{REPO_DIR}/shared/references/legal-validation-rules.md` 를 Read 툴로 읽고 RULE 1~10을 순서대로 적용해 생성된 계약서를 검토한다.
 
 - 오류 발견 시: 계약서 내용을 수정하고 파일을 덮어쓴 뒤 수정 내역을 사용자에게 알림
 - 확인 필요 항목: 사용자에게 명시적으로 고지
@@ -182,7 +182,7 @@ Write 툴로 직접 저장한다.
 **F-B-2: DOCX 변환**
 
 ```bash
-python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py \
+python3 {REPO_DIR}/shared/docx-generator.py \
   "{outputDir}/{파일명}.txt"
 ```
 

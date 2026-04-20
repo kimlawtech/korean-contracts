@@ -4,13 +4,13 @@ description: 법인·사업체 간 외주용역 계약서 자동 작성 스킬. 
 license: Apache-2.0
 version: 2.0.0
 ---
-<!-- /Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- {REPO_DIR}/outsourcing-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {REPO_DIR}/outsourcing-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 ## 중요: 파일 경로
 
 이 스킬의 파일은 아래 절대 경로에 있다. Read 툴로 직접 읽을 것.
-- 템플릿: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/outsourcing-contract.tmpl`
-- 공용 참조: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/`
+- 템플릿: `{REPO_DIR}/shared/templates/outsourcing-contract.tmpl`
+- 공용 참조: `{REPO_DIR}/shared/`
 
 ---
 
@@ -77,7 +77,7 @@ version: 2.0.0
 2) 없음 — 처음부터 새로 만들겠습니다.
 ```
 
-기존 계약서 제공 시 → `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
+기존 계약서 제공 시 → `{REPO_DIR}/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
 - 계약 유형·당사자 정보·용역 범위·대금 조건 자동 추출
 - 개정법령 비교 체크리스트 (A~I) + 하도급법·불법파견 기준 적용
 - ❌ 위반 / ⚠️ 개정법령 반영 필요 / 💡 개선 권고 3단계로 분류 출력
@@ -85,11 +85,11 @@ version: 2.0.0
 
 ### Step O1~O7: 전체 인터뷰
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [외주용역계약서] Step O1~O7을 순서대로 진행한다.
+`{REPO_DIR}/shared/interview-all.md`의 [외주용역계약서] Step O1~O7을 순서대로 진행한다.
 
 **인터뷰 원칙:**
 - 한 번에 1~2문항씩 질문한다
-- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- 전문용어는 `{REPO_DIR}/shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - "모르면 넘어가도 됩니다" — 선택 항목에만 붙인다. 당사자 정보·계약금액·납기 등 필수 항목에는 절대 붙이지 말 것
 - 마지막에 반드시 저장 폴더를 확인한다 (Step SAVE)
 
@@ -168,11 +168,11 @@ version: 2.0.0
 
 ### 템플릿 치환
 
-Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/outsourcing-contract.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
+Read 툴로 `{REPO_DIR}/shared/templates/outsourcing-contract.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `{REPO_DIR}/shared/render.md` 참조.
 
 ## [6단계] 품질 검증 체크리스트
 
-계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`를 Read 툴로 읽고 RULE 1~14를 순서대로 적용한다.
+계약서 생성 후 `{REPO_DIR}/shared/references/legal-validation-rules.md`를 Read 툴로 읽고 RULE 1~14를 순서대로 적용한다.
 
 - [ ] 용역 범위·산출물 명시 (하도급법 §3 필수 7항목)
 - [ ] 계약 금액·부가세·지급 조건 명확
@@ -201,7 +201,7 @@ Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/ou
 
 DOCX 변환:
 ```bash
-python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py \
+python3 {REPO_DIR}/shared/docx-generator.py \
   "{outputDir}/outsourcing-contract-{수주사명}-{YYYYMMDD}.txt"
 ```
 
@@ -250,7 +250,7 @@ SpeciAI 🇰🇷 — https://discord.gg/3gYGuMcqgb
 
 ## 법령 근거 (MUST READ)
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/outsourcing-law.md`
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md`
-4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`
+1. `{REPO_DIR}/shared/references/outsourcing-law.md`
+2. `{REPO_DIR}/shared/references/contract-glossary.md`
+3. `{REPO_DIR}/shared/references/penalty-risks.md`
+4. `{REPO_DIR}/shared/references/legal-validation-rules.md`

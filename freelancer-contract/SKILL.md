@@ -4,13 +4,13 @@ description: 개인 프리랜서·1인 사업자와의 용역 계약서 자동 �
 license: Apache-2.0
 version: 2.0.0
 ---
-<!-- /Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/freelancer-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- {REPO_DIR}/freelancer-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {REPO_DIR}/freelancer-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 ## 중요: 파일 경로
 
 이 스킬의 파일은 아래 절대 경로에 있다. Read 툴로 직접 읽을 것.
-- 템플릿: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/freelancer-contract.tmpl`
-- 공용 참조: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/`
+- 템플릿: `{REPO_DIR}/shared/templates/freelancer-contract.tmpl`
+- 공용 참조: `{REPO_DIR}/shared/`
 
 ---
 
@@ -69,7 +69,7 @@ version: 2.0.0
 2) 없음 — 처음부터 새로 만들겠습니다.
 ```
 
-기존 계약서 제공 시 → `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
+기존 계약서 제공 시 → `{REPO_DIR}/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
 - 계약 유형·당사자 정보·업무 범위·보수 항목 자동 추출
 - 개정법령 비교 체크리스트 (A~I) + 위장 프리랜서 7대 요소 적용
 - ❌ 위반 / ⚠️ 개정법령 반영 필요 / 💡 개선 권고 3단계로 분류 출력
@@ -77,11 +77,11 @@ version: 2.0.0
 
 ### Step F1~F6: 전체 인터뷰
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [프리랜서 계약서] Step F1~F6을 순서대로 진행한다.
+`{REPO_DIR}/shared/interview-all.md`의 [프리랜서 계약서] Step F1~F6을 순서대로 진행한다.
 
 **인터뷰 원칙:**
 - 한 번에 1~2문항씩 질문한다
-- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- 전문용어는 `{REPO_DIR}/shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - "모르면 넘어가도 됩니다" — 선택 항목에만 붙인다. 계약금액·당사자 정보·납기·업무 범위 등 필수 항목에는 절대 붙이지 말 것
 - 마지막에 반드시 저장 폴더를 확인한다 (Step SAVE)
 
@@ -167,7 +167,7 @@ version: 2.0.0
 
 ### 템플릿 치환
 
-Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/freelancer-contract.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
+Read 툴로 `{REPO_DIR}/shared/templates/freelancer-contract.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `{REPO_DIR}/shared/render.md` 참조.
 
 **저작권 귀속 분기:**
 - `{{#if ipToClient}}` 블록 활성화 — 발주자 귀속, 잔금 미지급 시 이전 거부 조항
@@ -178,7 +178,7 @@ Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/fr
 
 ## [6단계] 품질 검증 체크리스트
 
-계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`를 Read 툴로 읽고 RULE 1~14를 순서대로 적용한다.
+계약서 생성 후 `{REPO_DIR}/shared/references/legal-validation-rules.md`를 Read 툴로 읽고 RULE 1~14를 순서대로 적용한다.
 
 - [ ] RULE 1: 업무 범위·결과물 구체적 명시 (포괄 조항 금지)
 - [ ] RULE 2: 계약 기간·납기 명시
@@ -207,7 +207,7 @@ Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/fr
 
 DOCX 변환:
 ```bash
-python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py \
+python3 {REPO_DIR}/shared/docx-generator.py \
   "{outputDir}/freelancer-contract-{프리랜서명}-{YYYYMMDD}.txt"
 ```
 
@@ -253,7 +253,7 @@ SpeciAI 🇰🇷 — https://discord.gg/3gYGuMcqgb
 
 ## 법령 근거 (MUST READ)
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/freelancer-tax.md`
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md`
-4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`
+1. `{REPO_DIR}/shared/references/freelancer-tax.md`
+2. `{REPO_DIR}/shared/references/contract-glossary.md`
+3. `{REPO_DIR}/shared/references/penalty-risks.md`
+4. `{REPO_DIR}/shared/references/legal-validation-rules.md`

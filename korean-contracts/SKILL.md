@@ -26,7 +26,7 @@ version: 2.1.0
         bash {REPO_DIR}/install.sh
 
       Windows (PowerShell):
-        powershell -ExecutionPolicy Bypass -File {REPO_DIR_WIN}\install.ps1
+        powershell -ExecutionPolicy Bypass -File {REPO_DIR}\install.ps1
 
     설치 후 Claude Desktop을 완전히 종료 후 재실행하면 자동 연결됩니다.
 
@@ -36,7 +36,7 @@ version: 2.1.0
     민감 정보는 생성된 파일에서 [ ] 자리에 직접 기입하세요.
 ```
 
-**중요**: `{REPO_DIR}` / `{REPO_DIR_WIN}` 플레이스홀더는 `install.sh` / `install.ps1` 실행 시 실제 클론 경로로 자동 치환됩니다. 아직 치환되지 않은 상태라면 사용자에게 "이 스킬이 어느 폴더에 클론되어 있나요?"라고 물어 경로를 받은 뒤 해당 경로를 삽입해 안내합니다.
+**중요**: `{REPO_DIR}` / `{REPO_DIR}` 플레이스홀더는 `install.sh` / `install.ps1` 실행 시 실제 클론 경로로 자동 치환됩니다. 아직 치환되지 않은 상태라면 사용자에게 "이 스킬이 어느 폴더에 클론되어 있나요?"라고 물어 경로를 받은 뒤 해당 경로를 삽입해 안내합니다.
 
 프리플라이트가 끝나면 아래 메뉴를 출력한다. 상태 문구는 배너 바로 아래 한 줄로 삽입한다.
 

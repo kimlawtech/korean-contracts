@@ -4,13 +4,13 @@ description: 기존 근로계약서의 근로조건을 변경할 때 사용하�
 license: Apache-2.0
 version: 2.0.0
 ---
-<!-- /Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/contract-amendment을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
+<!-- {REPO_DIR}/contract-amendment = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 {REPO_DIR}/contract-amendment을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 ## 중요: 파일 경로
 
 이 스킬의 파일은 아래 절대 경로에 있다. Read 툴로 직접 읽을 것.
-- 템플릿: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/contract-amendment.tmpl`
-- 공용 참조: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/`
+- 템플릿: `{REPO_DIR}/shared/templates/contract-amendment.tmpl`
+- 공용 참조: `{REPO_DIR}/shared/`
 
 ---
 
@@ -70,7 +70,7 @@ version: 2.0.0
 2) 없음 — 변경 내용만 알려주시면 합의서를 작성합니다.
 ```
 
-기존 계약서 제공 시 → `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
+기존 계약서 제공 시 → `{REPO_DIR}/shared/references/contract-review.md` 를 Read 툴로 읽고 전체 프로토콜을 실행한다:
 - 계약 유형·당사자 정보·현재 근무 조건·임금 항목 자동 추출
 - 개정법령 비교 체크리스트 (A~I) + 불이익 변경 자동 판단 적용
 - ❌ 위반 / ⚠️ 개정법령 반영 필요 / 💡 개선 권고 3단계로 분류 출력
@@ -78,11 +78,11 @@ version: 2.0.0
 
 ### Step 1~10: 전체 인터뷰
 
-`/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로조건 변경 합의서] 섹션을 순서대로 진행한다.
+`{REPO_DIR}/shared/interview-all.md`의 [근로조건 변경 합의서] 섹션을 순서대로 진행한다.
 
 **인터뷰 원칙:**
 - 한 번에 1~2문항씩 질문한다
-- 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
+- 전문용어는 `{REPO_DIR}/shared/references/contract-glossary.md`로 즉시 풀어쓴다
 - "모르면 넘어가도 됩니다" — 선택 항목에만 붙인다. 시급·기본급·임금지급일·당사자 정보 등 필수 항목에는 절대 붙이지 말 것
 - 마지막에 반드시 저장 폴더를 확인한다 (Step SAVE)
 
@@ -227,7 +227,7 @@ version: 2.0.0
 
 ### 템플릿 치환
 
-Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/contract-amendment.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
+Read 툴로 `{REPO_DIR}/shared/templates/contract-amendment.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `{REPO_DIR}/shared/render.md` 참조.
 
 **임금 변경 분기:**
 - `{{#if hasSalaryChange}}` 블록 활성화 — 변경 전·후 기본급 명시
@@ -245,7 +245,7 @@ Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/co
 
 ## [6단계] 품질 검증 체크리스트
 
-계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`를 Read 툴로 읽고 RULE 1~14를 순서대로 적용한다.
+계약서 생성 후 `{REPO_DIR}/shared/references/legal-validation-rules.md`를 Read 툴로 읽고 RULE 1~14를 순서대로 적용한다.
 
 - [ ] 변경 전·후 조건 모두 명시
 - [ ] 변경 시행일 명시 (서명일 이후)
@@ -270,7 +270,7 @@ Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/co
 
 DOCX 변환:
 ```bash
-python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py \
+python3 {REPO_DIR}/shared/docx-generator.py \
   "{outputDir}/contract-amendment-{근로자명}-{YYYYMMDD}.txt"
 ```
 
@@ -316,9 +316,9 @@ SpeciAI 🇰🇷 — https://discord.gg/3gYGuMcqgb
 
 ## 법령 근거 (MUST READ)
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/labor-law-checklist.md`
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/minimum-wage-2026.md`
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/four-insurance.md`
-4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`
-5. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md`
-6. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`
+1. `{REPO_DIR}/shared/references/labor-law-checklist.md`
+2. `{REPO_DIR}/shared/references/minimum-wage-2026.md`
+3. `{REPO_DIR}/shared/references/four-insurance.md`
+4. `{REPO_DIR}/shared/references/contract-glossary.md`
+5. `{REPO_DIR}/shared/references/penalty-risks.md`
+6. `{REPO_DIR}/shared/references/legal-validation-rules.md`
