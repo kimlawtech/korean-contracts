@@ -7,6 +7,14 @@ version: 1.0.0
 <!-- /Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/outsourcing-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
 
 
+## 중요: 파일 경로
+
+이 스킬의 모든 파일은 로컬 디스크에 있다. GitHub이나 원격 레포를 탐색하지 말 것.
+- 템플릿: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/outsourcing-contract.tmpl`
+- 공용 참조: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/`
+
+Read 툴로 위 경로를 직접 읽어야 한다.
+
 # Outsourcing Contract Skill — 외주용역계약서
 
 법인·사업체 간 프로젝트 발주 시 사용하는 외주용역 계약서를 자동으로 생성한다.
