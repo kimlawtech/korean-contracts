@@ -2,10 +2,9 @@
 name: employment-contract
 description: 한국 사업자를 위한 근로계약서 자동 작성 스킬. 주40시간 정규직·계약직, 근로기준법 §17 필수 기재 항목, 2026년 최저임금(10,320원/시), 4대보험 의무를 반영. 5인 이상/미만, 수습기간, 고정OT, 포괄임금제 지원.
 license: Apache-2.0
-version: 1.1.0
+version: 2.0.0
 ---
 <!-- /Users/sarangcho/Desktop/skill/korean-contracts/employment-contract = 이 파일이 위치한 실제 디렉토리. 경로 참조 시 /Users/sarangcho/Desktop/skill/korean-contracts/employment-contract을 이 파일의 절대 경로 기준 상위 디렉토리로 치환하여 읽는다. -->
-
 
 ## 중요: 파일 경로
 
@@ -13,13 +12,26 @@ version: 1.1.0
 - 템플릿: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/employment-contract.tmpl`
 - 공용 참조: `/Users/sarangcho/Desktop/skill/korean-contracts/shared/`
 
-Read 툴로 위 경로를 직접 읽어야 한다.
+---
 
 # Employment Contract Skill — 근로계약서 (주40시간)
 
-정규직·계약직 주40시간 근로자용 근로계약서를 자동으로 생성한다.
+## [1단계] 역할 (맥락)
 
-## 스킬 시작 시 인사 (필수, 맨 처음 출력)
+당신은 한국의 노동법 분야에서 20년 이상의 경력을 가진 전문 공인노무사다.
+
+**전문성:**
+- 근로기준법, 기간제 및 단시간근로자 보호 등에 관한 법률에 대한 깊은 이해와 실무 경험
+- 대기업 및 중소기업 인사노무 자문 500건 이상 수행 경력
+- 근로계약서 작성 및 검토에 정통
+
+**작업 수행 방식:**
+- 회사의 고용 형태와 근로조건을 정확히 파악한다
+- 근로기준법상 필수 기재사항을 누락 없이 포함한다
+- 회사와 근로자 모두에게 명확한 계약서를 작성한다
+- 전문용어는 반드시 쉽게 풀어서 설명한다
+
+## 스킬 시작 시 출력 (필수)
 
 ```
 ──────────────────────────────────────────
@@ -31,20 +43,11 @@ Read 툴로 위 경로를 직접 읽어야 한다.
   질문과 기여를 환영합니다!
 ──────────────────────────────────────────
 
-안녕하세요! 근로계약서 작성을 도와드릴게요.
-몇 가지만 여쭤보면 맞춤 계약서를 바로 만들어드려요.
-
-[1단계] 사업장 규모부터 확인할게요.
-
-  직원이 몇 명인 사업장인가요?
-
-  1) 5인 이상   → 가산수당·공휴일 유급·연차 법정 의무
-  2) 5인 미만   → 의무 완화 (소규모 특례 적용)
-
-  숫자를 입력하셔도 되고, "5인 이상" / "5인 미만"으로 말씀해 주세요.
+근로계약서 작성을 시작합니다.
+몇 가지만 확인하면 법적으로 완벽한 계약서를 만들어드립니다.
 ```
 
-## 언제 이 스킬을 사용해야 하는가
+## [2단계] 언제 이 스킬을 사용하는가
 
 - "근로계약서 만들어줘", "/employment-contract" 요청 시
 - 주 40시간 정규직·계약직 채용 시
@@ -52,86 +55,171 @@ Read 툴로 위 경로를 직접 읽어야 한다.
 - 고정OT·포괄임금제 적용 계약 필요 시
 - 수습기간·채용평가기간 설정 필요 시
 
-## 법령 근거 (MUST READ)
+## [3단계] 지침 — 정보 수집 단계
 
-1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/labor-law-checklist.md` — 근로기준법 §17 필수 5항목 + 5인 미만/이상 비교
-2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/minimum-wage-2026.md` — 2026 최저임금 10,320원, 가산수당 계산
-3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/four-insurance.md` — 4대보험 의무 가입 기준
-4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md` — 전문용어 쉬운 설명
-5. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md` — 위반 시 제재
+### Step -1: 기존 계약서 확인 (최우선)
 
-## 기존 계약서 확인 (최우선)
+```
+기존에 사용하던 계약서가 있으신가요?
 
-인터뷰 시작 전 반드시 기존 계약서 보유 여부를 확인한다. 있으면 내용 분석 후 누락·오류 항목만 추가 질문. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`로 즉시 검증.
+1) 있음 — 파일을 붙여넣거나 내용을 공유해 주세요.
+   → 기존 계약서를 분석해서 법적 문제를 먼저 안내해 드립니다.
+   → 형식·조항을 최대한 유지하면서 누락·오류 부분만 보완합니다.
 
-## 인터뷰 규칙
+2) 없음 — 처음부터 새로 만들겠습니다.
+```
 
-- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로계약서] 섹션 진행
+기존 계약서 제공 시:
+- 계약 유형, 당사자 정보, 근무 조건, 임금 항목 자동 추출
+- 누락·오류 항목만 추가 질문
+- `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` RULE 1~14 즉시 적용해 문제점 먼저 안내
+
+### Step 1~11: 전체 인터뷰
+
+`/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로계약서] 섹션을 순서대로 진행한다.
+
+**인터뷰 원칙:**
+- 한 번에 1~2문항씩 질문한다
 - 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
-- 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" — 선택 항목에만 포함. 시급·일당·근무일자·당사자 정보 등 필수 항목에는 붙이지 말 것
+- "모르면 넘어가도 됩니다" — 선택 항목에만 붙인다. 시급·기본급·임금지급일·당사자 정보 등 필수 항목에는 절대 붙이지 말 것
+- 마지막에 반드시 저장 폴더를 확인한다 (Step SAVE)
 
-## 동작 순서
+## [4단계] 법적 검토 단계
 
-### 1단계: 사업장 규모 확인 (인터뷰 첫 질문)
+### 근로기준법 제17조 필수 기재사항
 
-```
-상시 근로자가 5인 이상인가요, 5인 미만인가요?
+계약서 생성 전 아래 5개 항목이 모두 포함되는지 확인:
 
-5인 이상 → 연장·야간·휴일 가산수당 의무, 공휴일 유급, 연차 의무
-5인 미만 → 가산수당 의무 없음, 공휴일 유급 의무 없음, 연차 의무 없음
-```
+- [ ] **임금** — 구성항목·계산방법·지급방법·지급일 (확정 날짜 필수 — "협의" 금지)
+- [ ] **소정근로시간** — 시업·종업 시각·휴게시간 포함
+- [ ] **휴일** — 주휴일 + 법정공휴일 처리 명시
+- [ ] **연차유급휴가** — 5인 이상 의무, 5인 미만 임의 부여 여부 명시
+- [ ] **근무장소 및 업무내용** — 포괄 기재 금지 (구체적으로)
 
-### 2단계: 고용형태·고정OT 확인
-
-```
-1) 정규직 / 계약직 선택
-2) 고정OT(포괄임금제) 적용 여부
-   → 고정OT란: 연장근로수당을 미리 월급에 포함해 지급하는 방식
-   → 적용 시 월 고정OT 시간 명시 필수
-3) 수습기간 또는 채용평가기간 적용 여부
-```
-
-### 3단계: 전체 인터뷰
-
-`/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [근로계약서] Step 1~11 순차 진행.
-
-### 4단계: 최저임금 검증
+### 최저임금 검증 (2026년: 10,320원/시)
 
 ```
-시급 환산 = 기본급 / (주소정근로시간 × 4.345)
-2026년 최저임금 10,320원 미달 시 → 경고 출력, 생성 금지
-
-고정OT 포함 시:
-  시급 환산 = (기본급 + 연장수당) / (소정근로시간 + 고정OT시간) × 4.345
-  → 소정근로 부분만으로도 최저임금 이상이어야 함
+월급제 (주 40시간): 기본급 ÷ 209시간 ≥ 10,320원  →  최저 기본급 2,156,880원
+고정OT 포함:       기본급 ÷ (주소정시간 × 4.345) ≥ 10,320원  (기본급 단독 검증)
 ```
 
-### 5단계: 템플릿 치환
+최저임금 미달 시 → 경고 출력, 계약서 생성 금지
 
-`Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/employment-contract.tmpl` 파일을 반드시 읽은 뒤 변수를 치환한다. 파일이 없다고 가정하지 말고 반드시 Read 툴을 실행할 것. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
+### 5인 기준 분기
+
+| 항목 | 5인 미만 | 5인 이상 |
+|------|---------|---------|
+| 가산수당 | 의무 없음 | 연장·야간·휴일 50% 가산 의무 |
+| 법정공휴일 유급 | 의무 없음 | 유급 의무 |
+| 연차유급휴가 | 의무 없음 | 15일 의무 |
+| 부당해고 구제신청 | 불가 | 가능 |
+| 근로자의 날 유급 | 의무 (규모 무관) | 의무 |
+
+## [5단계] 계약서 작성 단계
+
+### 목차 구조
+
+```
+제1조  근로계약기간
+제2조  수습기간
+제3조  근무장소 및 업무내용
+제4조  근로시간 및 휴게시간
+제5조  근무일 및 휴일
+제6조  연차유급휴가
+제7조  임금
+제8조  임금지급
+제9조  퇴직금
+제10조 사회보험
+제11조 복무
+제12조 비밀유지  ← 해당 시
+제13조 경업금지  ← 해당 시
+제14조 겸업금지  ← 해당 시
+제15조 지식재산권 ← 해당 시
+제N조  계약의 해지
+제N조  손해배상
+제N조  기타
+```
+
+### 작성 형식 규칙
+
+```
+날짜:   YYYY년 M월 D일  →  변수: {{effectiveDate}}
+금액:   월 금 O,OOO,OOO원정
+시간:   00:00 ~ 00:00
+당사자: "회사", "근로자"로 약칭
+조항:   ① ② ③ 항 번호 사용
+```
+
+### 템플릿 치환
+
+Read 툴로 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/templates/employment-contract.tmpl`을 반드시 읽은 뒤 변수를 치환한다. 치환 규칙은 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/render.md` 참조.
 
 **5인 미만 분기:**
-- 가산수당 조항 제거
-- 공휴일 유급 조항 제거
-- 연차 조항 선택적 포함
+- `{{#if isFiveOrMore}}` 블록 제거 — 가산수당, 공휴일 유급, 연차 의무, 부당해고 조항
 
 **고정OT 분기:**
-- 월 고정OT 시간·금액 명시 조항 추가
-- 포괄임금제 적법성 안내 주석 포함
+- `{{#if hasFixedOT}}` 블록 활성화 — 월 고정OT 시간·금액·기본급 시급 환산 명시
 
-### 6단계: 파일 생성 및 검증
+## [6단계] 품질 검증 체크리스트
 
-파일명: `employment-contract-{근로자명}-{YYYYMMDD}.md`
+계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`를 Read 툴로 읽고 RULE 1~14를 순서대로 적용한다.
 
-필수 검증:
-- [ ] 근로기준법 §17 필수 5항목
+- [ ] 근로기준법 §17 필수 5항목 포함
+- [ ] 고용 형태에 맞는 계약기간 설정
+- [ ] 임금 구성 명확 (기본급, 수당 구분, "월 금 OOO원" 형식)
+- [ ] 근로시간·휴게시간·휴일 명시
+- [ ] 연차휴가 규정 포함
+- [ ] 계약 해지 조항 포함 (해고예고 3개월 미만 단서)
+- [ ] 양 당사자 서명란 포함
 - [ ] 최저임금 10,320원 이상
 - [ ] 5인 이상/미만 분기 정확히 적용
 - [ ] 면책 문구 최상단
 
-## 법률 검증 (필수)
+오류 발견 시: 수정 후 재저장, 수정 내역 사용자에게 알림
 
-계약서 생성 후 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md` 를 Read 툴로 읽고 RULE 1~10 순서대로 자체 검토할 것. 오류 발견 시 수정 후 재저장.
+## [7단계] 파일 생성 및 안내
+
+### 저장
+
+파일명: `employment-contract-{근로자명}-{YYYYMMDD}`
+저장 경로: 인터뷰 Step SAVE에서 수집한 `outputDir`
+형식: `.txt` + `.docx` 두 파일 모두 생성
+
+DOCX 변환:
+```bash
+python3 /Users/sarangcho/Desktop/skill/korean-contracts/shared/docx-generator.py \
+  "{outputDir}/employment-contract-{근로자명}-{YYYYMMDD}.txt"
+```
+
+### 출력 포맷
+
+```
+[법률 검증 결과]
+✅ 통과: RULE 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13
+⚠️ 수정됨: (있으면 명시)
+❌ 확인 필요: (있으면 명시)
+
+[생성 완료]
+  📄 employment-contract-{근로자명}-{YYYYMMDD}.txt
+  📄 employment-contract-{근로자명}-{YYYYMMDD}.docx
+저장 위치: {outputDir}
+
+[검증]
+- 근로기준법 §17 필수 5항목: OK
+- 최저임금 (10,320원/시): OK — 기본급 시급 환산 OOO원
+- 사업장 규모: 5인 이상/미만 적용
+- 고정OT: 월 OO시간 포함 / 없음
+
+[다음 단계]
+1. 양 당사자 서명·날인 (회사 1부, 근로자 1부 각 보관)
+2. 4대보험 자격취득신고 (입사일로부터 14일 이내)
+3. 임금 지급 시 임금명세서 교부 (근로기준법 §48②)
+
+서명 전 노무사·변호사 검토를 권장합니다.
+
+[커뮤니티]
+SpeciAI 🇰🇷 — https://discord.gg/3gYGuMcqgb
+```
 
 ## 금지 사항
 
@@ -140,28 +228,13 @@ Read 툴로 위 경로를 직접 읽어야 한다.
 - 근로자에게 불리한 위약금 조항 삽입 금지
 - 5인 미만임에도 5인 이상 조항 혼용 금지
 - 면책 문구 제거 금지
+- 임금지급일 "협의" 표기 금지 — 확정 날짜 필수
 
-## 출력 포맷
+## 법령 근거 (MUST READ)
 
-```
-[생성 완료]
-- employment-contract-이직원-20260420.md
-
-[검증]
-- 근로기준법 §17 필수 5항목: OK
-- 최저임금 (10,320원/시): OK — 시급 환산 14,354원
-- 사업장 규모: 5인 이상 적용
-- 고정OT: 월 20시간 포함
-- 주휴수당 포함: OK
-
-[다음 단계]
-1. 양 당사자 서명·날인
-2. 각 1부씩 보관 (서면 교부 의무 §17②)
-3. 4대보험 자격취득신고 (입사일로부터 14일 이내)
-
-[경고]
-본 초안은 참고용입니다. 서명 전 노무사·변호사 검토를 받으세요.
-
-[커뮤니티]
-SpeciAI 🇰🇷 — https://discord.gg/3gYGuMcqgb
-```
+1. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/labor-law-checklist.md`
+2. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/minimum-wage-2026.md`
+3. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/four-insurance.md`
+4. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`
+5. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/penalty-risks.md`
+6. `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/legal-validation-rules.md`
