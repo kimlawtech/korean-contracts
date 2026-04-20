@@ -119,7 +119,7 @@ Read 툴로 위 경로를 직접 읽어야 한다.
 
 - `/Users/sarangcho/Desktop/skill/korean-contracts/shared/interview-all.md`의 [일용근로자 계약서] 섹션 진행
 - 전문용어는 `/Users/sarangcho/Desktop/skill/korean-contracts/shared/references/contract-glossary.md`로 즉시 풀어쓴다
-- 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" 항상 포함
+- 한 번에 1~2문항씩, "모르면 넘어가도 됩니다" — 선택 항목에만 포함. 시급·일당·근무일자·당사자 정보 등 필수 항목에는 붙이지 말 것
 
 ## 동작 순서
 
