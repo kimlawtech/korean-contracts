@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "korean-contracts": {
+      "command": "python3",
+      "args": [
+        "/Users/sarangcho/Desktop/skill/korean-contracts/mcp-server/server.py"
+      ]
+    }
+  }
+}
