@@ -359,8 +359,9 @@ korean-contracts/
 
 - **버그 제보·기능 제안**: [Issues](https://github.com/kimlawtech/korean-contracts/issues) 에서 양식에 맞춰 등록
 - **신규 계약 유형·법령 업데이트**: 전용 Issue 템플릿 제공
+- **자유 토론·사용 후기**: [GitHub Discussions](https://github.com/kimlawtech/korean-contracts/discussions)
 - **Pull Request**: [CONTRIBUTING.md](CONTRIBUTING.md) 규칙 준수 필수
-- **커뮤니티 토론**: [Discord](https://discord.gg/3gYGuMcqgb)
+- **실시간 채팅**: [Discord](https://discord.gg/3gYGuMcqgb)
 
 ### 커밋 메시지 규칙
 

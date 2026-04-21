@@ -191,10 +191,35 @@ git checkout -b legal-update/2026-overtime-rule
 
 ---
 
-## 질문·논의
+## 질문·논의 채널
 
-- **GitHub Issues** — 버그·기능 제안
-- **Discord** — 자유 토론, 빠른 질문: [discord.gg/3gYGuMcqgb](https://discord.gg/3gYGuMcqgb)
-- **Maintainer** — [@kimlawtech](https://github.com/kimlawtech)
+| 채널 | 용도 |
+|------|------|
+| **GitHub Issues** | 버그 리포트·기능 제안·신규 계약 유형 제안 |
+| **GitHub Discussions** | 자유 토론·사용 후기·법령 해석 토론·아이디어 브레인스토밍 |
+| **Discord** | 빠른 질문·실시간 채팅: [discord.gg/3gYGuMcqgb](https://discord.gg/3gYGuMcqgb) |
+| **Maintainer** | [@kimlawtech](https://github.com/kimlawtech) |
+
+### Issue vs Discussion 어디에 올릴까?
+
+- **Issue로**: 명확한 버그·구체적 기능 요청·법령 업데이트 요청 (실행 가능한 작업)
+- **Discussion으로**: "이렇게 해도 될까요?", 사용 사례 공유, 법령 해석 의견 교환 (대화)
+
+---
+
+## 자동 검증 워크플로우
+
+PR을 열면 GitHub Actions가 자동 실행됩니다:
+
+| 워크플로우 | 검증 내용 |
+|-----------|----------|
+| `commit-lint` | 모든 커밋이 `[LABEL] 한국어 단문` 형식인지 |
+| `commit-lint` | `Co-Authored-By` 줄 없는지 |
+| `commit-lint` | Claude·GPT·Copilot 등 AI 도구 언급 없는지 |
+| `auto-label` | PR 제목·본문 기반 자동 라벨 부여 |
+
+검증 실패 시 PR 머지 차단. 커밋 메시지 수정 후 재푸시하세요.
+
+---
 
 감사합니다.
