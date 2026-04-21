@@ -97,11 +97,17 @@ if ($pythonCmd) {
         Write-Host "      $pythonCmd -m pip install mcp python-docx"
     }
 
-    # Claude Desktop 설정 등록
-    Write-Host "[2/2] Claude Desktop 설정 등록 ..."
+    # MCP 등록 대상 자동 감지
+    Write-Host "[2/2] MCP 서버 등록 ..."
+    $installTarget = "claude"
+    if (Get-Command codex -ErrorAction SilentlyContinue) {
+        $installTarget = "both"
+        Write-Host "  Codex CLI 감지됨 -> Claude Desktop + Codex 양쪽 등록"
+    }
+
     $configScript = Join-Path $RepoDir "mcp-server\install-config.py"
     if (Test-Path $configScript) {
-        & $pythonCmd $configScript
+        & $pythonCmd $configScript "--target" $installTarget
     } else {
         Write-Host "  경고: install-config.py 파일이 없어 MCP 등록을 건너뜁니다."
     }

@@ -77,12 +77,19 @@ else
   echo "  ⚠️  pip3 명령을 찾을 수 없습니다. Python3 설치 후 재시도하세요."
 fi
 
-# Claude Desktop 설정 파일에 MCP 서버 등록
-echo "[2/2] Claude Desktop 설정 등록 ..."
+# MCP 등록 대상 자동 감지 (Claude Desktop·Codex CLI 양쪽)
+echo "[2/2] MCP 서버 등록 ..."
+
+INSTALL_TARGET="claude"
+if command -v codex &> /dev/null; then
+  INSTALL_TARGET="both"
+  echo "  Codex CLI 감지됨 → Claude Desktop + Codex 양쪽 등록"
+fi
+
 if [ -f "$REPO_DIR/mcp-server/install-config.py" ]; then
-  python3 "$REPO_DIR/mcp-server/install-config.py" || {
+  python3 "$REPO_DIR/mcp-server/install-config.py" --target "$INSTALL_TARGET" || {
     echo "  ⚠️  MCP 설정 등록 실패. 수동 등록이 필요합니다."
-    echo "      python3 $REPO_DIR/mcp-server/install-config.py"
+    echo "      python3 $REPO_DIR/mcp-server/install-config.py --target $INSTALL_TARGET"
   }
 else
   echo "  ⚠️  install-config.py 파일이 없어 MCP 등록을 건너뜁니다."

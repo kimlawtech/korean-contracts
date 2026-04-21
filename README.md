@@ -216,7 +216,58 @@ powershell -ExecutionPolicy Bypass -File install.ps1
 
 ### Linux 사용자 안내
 
-Linux는 현재 **Claude Desktop 미지원**입니다. 스킬 자체는 Claude Code CLI에서 사용 가능하지만, MCP 보안 서버는 작동하지 않으므로 플레이스홀더 모드로만 이용할 수 있습니다.
+Linux는 현재 **Claude Desktop 미지원**입니다. 스킬 자체는 Claude Code CLI 또는 **Codex CLI** 에서 사용 가능합니다 (아래 "Codex CLI에서 사용하기" 참고).
+
+---
+
+## Codex CLI에서 사용하기
+
+[Codex CLI](https://github.com/openai/codex) 사용자도 이 스킬과 MCP 서버를 사용할 수 있습니다.
+
+### 설치
+
+`install.sh` (또는 `install.ps1`)는 시스템에 `codex` 명령이 있으면 **자동으로 Codex CLI 설정에도 MCP 서버를 등록**합니다.
+
+수동으로 Codex만 등록하려면:
+
+```bash
+python3 mcp-server/install-config.py --target codex
+```
+
+`~/.codex/config.toml` 파일에 다음 항목이 자동 추가됩니다:
+
+```toml
+[mcp_servers.korean-contracts]
+command = "python3"
+args = ["<클론 경로>/mcp-server/server.py"]
+```
+
+### 사용
+
+Codex CLI는 Claude Code의 슬래시 명령(`/employment-contract`)을 인식하지 않습니다. 대신 **레포 루트의 `AGENTS.md` 파일을 자동으로 읽어 컨텍스트로 사용**합니다.
+
+```bash
+cd ~/Projects/korean-contracts
+codex "근로계약서 만들어줘"
+```
+
+또는 작업 지시를 명시적으로:
+
+```bash
+codex "shared/interview-all.md 의 [근로계약서] 인터뷰를 따라 근로계약서 작성해줘. \
+       MCP 도구 mask_personal_info → save_contract 흐름으로 처리하고, \
+       shared/references/legal-validation-rules.md 의 RULE 1~10 검증 적용."
+```
+
+### Claude Code vs Codex CLI 차이
+
+| 항목 | Claude Code | Codex CLI |
+|------|-------------|-----------|
+| 슬래시 명령 (`/employment-contract`) | ✅ | ❌ (자연어로 지시) |
+| SKILL.md 자동 인식 | ✅ | ❌ (`AGENTS.md` 참고) |
+| MCP 서버 | ✅ | ✅ |
+| OS 지원 | macOS / Windows | macOS / Windows / Linux |
+| 진입점 메뉴 (9종 자동 표시) | ✅ | ❌ (사용자가 유형 명시) |
 
 ---
 
@@ -268,6 +319,7 @@ korean-contracts/
 ├── DISCLAIMER.md
 ├── install.sh                    macOS·Linux용 자동 설치
 ├── install.ps1                   Windows PowerShell용 자동 설치
+├── AGENTS.md                     Codex CLI·기타 AI 에이전트용 컨텍스트
 │
 ├── korean-contracts/           ← /korean-contracts (진입점 라우터)
 │   └── SKILL.md
