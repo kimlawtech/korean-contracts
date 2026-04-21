@@ -1,0 +1,96 @@
+name: Commit Message Lint
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate commit messages
+        id: lint
+        run: |
+          BASE_SHA="${{ github.event.pull_request.base.sha }}"
+          HEAD_SHA="${{ github.event.pull_request.head.sha }}"
+
+          # 정규식: [ADD] / [FIX] / [UPDATE] / [REMOVE] 로 시작
+          PATTERN='^\[(ADD|FIX|UPDATE|REMOVE)\] .+'
+
+          # Co-Authored-By 금지 패턴
+          FORBIDDEN_COAUTHOR='Co-Authored-By'
+
+          # AI 도구 언급 금지 패턴
+          FORBIDDEN_AI='(Claude|claude|GPT|Copilot|Generated with)'
+
+          INVALID=()
+          AI_VIOLATIONS=()
+          COAUTHOR_VIOLATIONS=()
+
+          while read -r commit; do
+            MSG=$(git log -1 --pretty=%B "$commit")
+            SUBJECT=$(echo "$MSG" | head -1)
+
+            # 1) 제목 형식 검증
+            if ! echo "$SUBJECT" | grep -qE "$PATTERN"; then
+              INVALID+=("$commit: $SUBJECT")
+            fi
+
+            # 2) Co-Authored-By 금지
+            if echo "$MSG" | grep -q "$FORBIDDEN_COAUTHOR"; then
+              COAUTHOR_VIOLATIONS+=("$commit: $SUBJECT")
+            fi
+
+            # 3) AI 도구 언급 금지
+            if echo "$MSG" | grep -qE "$FORBIDDEN_AI"; then
+              AI_VIOLATIONS+=("$commit: $SUBJECT")
+            fi
+          done < <(git rev-list "$BASE_SHA..$HEAD_SHA")
+
+          FAILED=0
+
+          if [ ${#INVALID[@]} -gt 0 ]; then
+            echo "::error::커밋 메시지 형식 위반: [ADD]/[FIX]/[UPDATE]/[REMOVE] 한국어 단문 형식 필요"
+            for c in "${INVALID[@]}"; do
+              echo "  ❌ $c"
+            done
+            FAILED=1
+          fi
+
+          if [ ${#COAUTHOR_VIOLATIONS[@]} -gt 0 ]; then
+            echo "::error::Co-Authored-By 줄 금지"
+            for c in "${COAUTHOR_VIOLATIONS[@]}"; do
+              echo "  ❌ $c"
+            done
+            FAILED=1
+          fi
+
+          if [ ${#AI_VIOLATIONS[@]} -gt 0 ]; then
+            echo "::error::커밋 메시지에 AI 도구 언급 금지 (Claude, GPT, Copilot 등)"
+            for c in "${AI_VIOLATIONS[@]}"; do
+              echo "  ❌ $c"
+            done
+            FAILED=1
+          fi
+
+          if [ $FAILED -eq 1 ]; then
+            echo ""
+            echo "올바른 형식 예시:"
+            echo "  [ADD] 외국인 근로자 특례 계약서 템플릿"
+            echo "  [FIX] symlink 경로 버그"
+            echo "  [UPDATE] 2026년 최저임금 10,320원 반영"
+            echo "  [REMOVE] 구버전 포괄임금 검증 로직"
+            echo ""
+            echo "자세한 규칙: CONTRIBUTING.md"
+            exit 1
+          fi
+
+          echo "✅ 모든 커밋 메시지 검증 통과"

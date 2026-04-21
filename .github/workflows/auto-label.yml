@@ -1,0 +1,49 @@
+name: Auto Label PR
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Apply labels by PR title prefix
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = context.payload.pull_request.title || '';
+            const prNumber = context.payload.pull_request.number;
+            const labels = [];
+
+            // 라벨 매핑 — PR 제목 prefix 기준
+            if (/^\[ADD\]/i.test(title))    labels.push('enhancement');
+            if (/^\[FIX\]/i.test(title))    labels.push('bug');
+            if (/^\[UPDATE\]/i.test(title)) labels.push('enhancement');
+            if (/^\[REMOVE\]/i.test(title)) labels.push('cleanup');
+
+            // 본문·제목 내용 기반 추가 라벨
+            const body = (context.payload.pull_request.body || '') + ' ' + title;
+            if (/근로기준법|대법원|판례|법령|개정/.test(body))     labels.push('legal-update');
+            if (/MCP|마스킹|개인정보/.test(body))                   labels.push('mcp');
+            if (/계약서|템플릿|template/.test(body))                labels.push('contract');
+            if (/README|docs|문서|가이드/.test(body))                labels.push('documentation');
+            if (/install|설치|setup/.test(body))                     labels.push('installation');
+
+            const unique = [...new Set(labels)];
+            if (unique.length === 0) {
+              console.log('적용할 라벨 없음');
+              return;
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: prNumber,
+              labels: unique,
+            });
+            console.log(`라벨 적용: ${unique.join(', ')}`);
