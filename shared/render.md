@@ -204,6 +204,9 @@ python3 {REPO_DIR}/shared/docx-generator.py \
 실제 서명 전 노무사·변호사 검토를 권장합니다.
 ```
 
+**그 다음 즉시 `interview-all.md` 의 "공통 Step CLOSE: 종료 안내" 블록을 출력**한다.
+SpeciAI 커뮤니티 입장 경로 + 피드백 채널 안내 + GitHub Star 요청. 절대 생략하지 않는다.
+
 ## 흔한 실수
 
 - 조건부 블록 태그 그대로 출력하면 안 됨
