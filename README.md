@@ -4,16 +4,17 @@
 [![Claude Code Skill](https://img.shields.io/badge/Claude_Code-Skill-orange)](https://claude.ai/code)
 [![Version](https://img.shields.io/badge/version-2.1.0-green)](https://github.com/kimlawtech/korean-contracts)
 [![MCP](https://img.shields.io/badge/MCP-Enabled-purple)](https://modelcontextprotocol.io)
-[![Discord](https://img.shields.io/badge/Discord-SpeciAI-5865F2)](https://discord.gg/3gYGuMcqgb)
+[![Discord](https://img.shields.io/badge/Discord-SpeciAI-5865F2)](https://discord.gg/hqdGsY7UpH)
 
 **한국 사업자를 위한 AI 계약서 자동 작성 도구**
 
 창업자·HR 담당자·소상공인이 근로계약서, 알바계약서, 프리랜서 계약서, 외주용역계약서 등 8종의 계약서를 Claude Code에서 대화형으로 작성할 수 있는 스킬 모음입니다.
 2026년 최저임금·최신 대법원 판례를 반영하고, RULE 1~14 법률 검증을 통과한 계약서 초안을 `.txt` + `.docx` 두 가지 형식으로 자동 생성합니다.
 
-> 한국 법률 AI 허브 **SpeciAI**에서 만들고 있습니다.
-> 계약·노동·투자·지재권을 AI로 해결하는 창업자·변호사 커뮤니티에 초대합니다.
-> → [discord.gg/3gYGuMcqgb](https://discord.gg/3gYGuMcqgb) | [@kimlawtech](https://github.com/kimlawtech)
+> 한국 도메인 특화 AI **스페시아이**에서 만듭니다.
+> 법률·세무·노무·회계·의료 실무에 쓰는 도구를 오픈소스로 공개하고,
+> 완성 제품은 [speciai.kr](https://speciai.kr) 에서 운영합니다.
+> → 제품 [speciai.kr/plugin](https://speciai.kr/plugin) · 커뮤니티 [디스코드](https://discord.gg/hqdGsY7UpH)
 
 ---
 
@@ -413,7 +414,7 @@ korean-contracts/
 - **신규 계약 유형·법령 업데이트**: 전용 Issue 템플릿 제공
 - **자유 토론·사용 후기**: [GitHub Discussions](https://github.com/kimlawtech/korean-contracts/discussions)
 - **Pull Request**: [CONTRIBUTING.md](CONTRIBUTING.md) 규칙 준수 필수
-- **실시간 채팅**: [Discord](https://discord.gg/3gYGuMcqgb)
+- **실시간 채팅**: [Discord](https://discord.gg/hqdGsY7UpH)
 
 ### 커밋 메시지 규칙
 
@@ -446,7 +447,7 @@ korean-contracts/
 한국 법률 AI 허브 **SpeciAI** 디스코드에서 만나세요.
 노동·계약·투자·지재권 법률 이슈를 AI와 함께 풀어가는 창업자·변호사 커뮤니티입니다.
 
-**초대 링크**: [discord.gg/3gYGuMcqgb](https://discord.gg/3gYGuMcqgb)
+**초대 링크**: [discord.gg/hqdGsY7UpH](https://discord.gg/hqdGsY7UpH)
 
 이 프로젝트를 만들고 있습니다: [@kimlawtech](https://github.com/kimlawtech)
 질문·기여·버그 제보를 환영합니다. Issue 또는 PR로 참여해주세요.
@@ -456,3 +457,26 @@ korean-contracts/
 ## License
 
 **Apache License 2.0** — Copyright 2026 kimlawtech (SpeciAI).
+
+---
+
+## 만든 곳
+
+[스페시아이](https://speciai.kr)는 법률·세무·노무·회계·의료 실무에 쓰는
+도메인 특화 AI를 만듭니다. 한국능률협회와 AI 교육과정을 공동 개설했고,
+전문직 세미나에 누적 500명 이상이 참여했습니다.
+
+- 제품 전체 — <https://speciai.kr/services>
+- Claude Code 플러그인 (법무·노무·세무 자문) — <https://speciai.kr/plugin>
+- 전문직 AI 세미나 (월 1회) — <https://speciai.kr/seminar>
+- 커뮤니티 — <https://discord.gg/hqdGsY7UpH>
+
+### 함께 만든 오픈소스
+
+| 저장소 | 내용 | |
+|---|---|---|
+| [korean-privacy-terms](https://github.com/kimlawtech/korean-privacy-terms) | 처리방침·이용약관 자동 생성 | 569★ |
+| [korean-jangbu-for](https://github.com/kimlawtech/korean-jangbu-for) | 장부 자동 생성·OCR | 80★ |
+| [korean-patent-diagram](https://github.com/kimlawtech/korean-patent-diagram) | 특허 도면 자동 생성 (KIPO 규격) | 18★ |
+| [korean-certified-mail](https://github.com/kimlawtech/korean-certified-mail) | 내용증명 14종 | 9★ |
+| [korean-domain-agent](https://github.com/kimlawtech/korean-domain-agent) | 도메인 특화 LLM 에이전트 킷 | 5★ |
